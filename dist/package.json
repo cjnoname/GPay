@@ -1,0 +1,21 @@
+{
+  "name": "premier-app-sign",
+  "author": "CJ <chengj@ticketek.com.au>",
+  "version": "0.0.61",
+  "scripts": {
+    "start": "node app.js",
+    "clean": "del package-lock.json && rimraf node_modules/",
+    "create": "claudia create --name premier-app-sign --handler lambda.handler --deploy-proxy-api --region ap-southeast-2 --profile claudia --role lambda-kinesis-execution-role",
+    "update": "npm version patch && claudia update --handler lambda.handler --region ap-southeast-2 --profile claudia",
+    "destroy": "claudia destroy --handler lambda.handler --region ap-southeast-2 --profile claudia",
+    "prod-clean": "del app* && del *.map",
+    "debug": "node --inspect app.js"
+  },
+  "devDependencies": {
+    "claudia": "5.0.0"
+  },
+  "dependencies": {
+    "aws-serverless-express": "3.2.0",
+    "express": "4.16.3"
+  }
+}

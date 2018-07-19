@@ -1,0 +1,10 @@
+{
+  "lambda": {
+    "role": "lambda-kinesis-execution-role",
+    "name": "premier-app-sign",
+    "region": "ap-southeast-2"
+  },
+  "api": {
+    "id": "6xxi86vzvc"
+  }
+}

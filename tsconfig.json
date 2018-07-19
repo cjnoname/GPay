@@ -1,0 +1,55 @@
+{
+  "compilerOptions": {
+    "baseUrl": ".",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "target": "es5",
+    "jsx": "react",
+    "experimentalDecorators": true,
+    "sourceMap": true,
+    "skipDefaultLibCheck": true,
+    "strict": true,
+    "keyofStringsOnly": true,
+    "noImplicitAny": true,
+    "removeComments": true,
+    "lib": [
+      "es2018",
+      "dom"
+    ],
+    "types": [
+      "webpack-env"
+    ],
+    "paths": {
+      "models/*": [
+        "src/client/models/*"
+      ],
+      "enums/*": [
+        "src/client/enums/*"
+      ],
+      "utils/*": [
+        "src/client/utils/*"
+      ],
+      "UI/*": [
+        "src/client/UI/*"
+      ],
+      "shared/*": [
+        "src/client/shared/*"
+      ],
+      "client/*": [
+        "src/client/*"
+      ],
+      "store": [
+        "src/client/store"
+      ],
+      "sharedUtils/*": [
+        "src/shared/utils/*"
+      ]
+    }
+  },
+  "exclude": [
+    "bin",
+    "node_modules",
+    "public",
+    "*.js"
+  ]
+}
