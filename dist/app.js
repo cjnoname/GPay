@@ -557,6 +557,7 @@ var _Paper = _interopRequireDefault(__webpack_require__(/*! ../Paper */ "./node_
 var styles = function styles(theme) {
   var backgroundColorDefault = theme.palette.type === 'light' ? theme.palette.grey[100] : theme.palette.grey[900];
   return {
+    /* Styles applied to the root element. */
     root: {
       display: 'flex',
       flexDirection: 'column',
@@ -566,35 +567,49 @@ var styles = function styles(theme) {
       zIndex: theme.zIndex.appBar,
       flexShrink: 0
     },
+
+    /* Styles applied to the root element if `position="fixed"`. */
     positionFixed: {
       position: 'fixed',
       top: 0,
       left: 'auto',
       right: 0
     },
+
+    /* Styles applied to the root element if `position="absolute"`. */
     positionAbsolute: {
       position: 'absolute',
       top: 0,
       left: 'auto',
       right: 0
     },
+
+    /* Styles applied to the root element if `position="sticky"`. */
     positionSticky: {
       position: 'sticky',
       top: 0,
       left: 'auto',
       right: 0
     },
+
+    /* Styles applied to the root element if `position="static"`. */
     positionStatic: {
       position: 'static'
     },
+
+    /* Styles applied to the root element if `color="default"`. */
     colorDefault: {
       backgroundColor: backgroundColorDefault,
       color: theme.palette.getContrastText(backgroundColorDefault)
     },
+
+    /* Styles applied to the root element if `color="primary"`. */
     colorPrimary: {
       backgroundColor: theme.palette.primary.main,
       color: theme.palette.primary.contrastText
     },
+
+    /* Styles applied to the root element if `color="secondary"`. */
     colorSecondary: {
       backgroundColor: theme.palette.secondary.main,
       color: theme.palette.secondary.contrastText
@@ -723,6 +738,7 @@ var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withS
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       position: 'relative',
       display: 'flex',
@@ -737,10 +753,16 @@ var styles = function styles(theme) {
       overflow: 'hidden',
       userSelect: 'none'
     },
+
+    /* Styles applied to the root element if there are children and not `src` or `srcSet` */
+
+    /* Styles applied to the root element if `color="default"`. */
     colorDefault: {
       color: theme.palette.background.default,
       backgroundColor: theme.palette.type === 'light' ? theme.palette.grey[400] : theme.palette.grey[600]
     },
+
+    /* Styles applied to the img element if either `src` or `srcSet` is defined. */
     img: {
       width: '100%',
       height: '100%',
@@ -833,7 +855,7 @@ Avatar.propTypes =  true ? {
   component: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.func, _propTypes.default.object]),
 
   /**
-   * Attributes applied to the `img` element when the component
+   * Attributes applied to the `img` element if the component
    * is used to display an image.
    */
   imgProps: _propTypes.default.object,
@@ -925,6 +947,7 @@ var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withS
 var _Fade = _interopRequireDefault(__webpack_require__(/*! ../Fade */ "./node_modules/@material-ui/core/Fade/index.js"));
 
 var styles = {
+  /* Styles applied to the root element. */
   root: {
     zIndex: -1,
     width: '100%',
@@ -936,6 +959,8 @@ var styles = {
     WebkitTapHighlightColor: 'transparent',
     backgroundColor: 'rgba(0, 0, 0, 0.5)'
   },
+
+  /* Styles applied to the root element if `invisible={true}`. */
   invisible: {
     backgroundColor: 'transparent'
   }
@@ -1062,16 +1087,19 @@ var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withS
 
 var _helpers = __webpack_require__(/*! ../utils/helpers */ "./node_modules/@material-ui/core/utils/helpers.js");
 
-var RADIUS = 12;
+var RADIUS = 11;
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       position: 'relative',
       display: 'inline-flex',
       // For correct alignment with the text.
       verticalAlign: 'middle'
     },
+
+    /* Styles applied to the badge `span` element. */
     badge: {
       display: 'flex',
       flexDirection: 'row',
@@ -1084,7 +1112,7 @@ var styles = function styles(theme) {
       right: -RADIUS,
       fontFamily: theme.typography.fontFamily,
       fontWeight: theme.typography.fontWeight,
-      fontSize: theme.typography.pxToRem(RADIUS),
+      fontSize: theme.typography.pxToRem(12),
       width: RADIUS * 2,
       height: RADIUS * 2,
       borderRadius: '50%',
@@ -1093,14 +1121,20 @@ var styles = function styles(theme) {
       zIndex: 1 // Render the badge on top of potential ripples.
 
     },
+
+    /* Styles applied to the root element if `color="primary"`. */
     colorPrimary: {
       backgroundColor: theme.palette.primary.main,
       color: theme.palette.primary.contrastText
     },
+
+    /* Styles applied to the root element if `color="secondary"`. */
     colorSecondary: {
       backgroundColor: theme.palette.secondary.main,
       color: theme.palette.secondary.contrastText
     },
+
+    /* Styles applied to the root element if `color="error"`. */
     colorError: {
       backgroundColor: theme.palette.error.main,
       color: theme.palette.error.contrastText
@@ -1231,6 +1265,7 @@ var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withS
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       display: 'flex',
       justifyContent: 'center',
@@ -1392,6 +1427,7 @@ var _unsupportedProp = _interopRequireDefault(__webpack_require__(/*! ../utils/u
 // @inheritedComponent ButtonBase
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       transition: theme.transitions.create(['color', 'padding-top'], {
         duration: theme.transitions.duration.short
@@ -1412,8 +1448,14 @@ var styles = function styles(theme) {
         color: theme.palette.primary.main
       }
     },
+
+    /* Styles applied to the root element if selected. */
     selected: {},
+
+    /* Styles applied to the root element if `showLabel={false}` and not selected. */
     iconOnly: {},
+
+    /* Styles applied to the span element that wraps the icon and label. */
     wrapper: {
       display: 'inline-flex',
       alignItems: 'center',
@@ -1421,6 +1463,8 @@ var styles = function styles(theme) {
       width: '100%',
       flexDirection: 'column'
     },
+
+    /* Styles applied to the label's span element. */
     label: {
       fontFamily: theme.typography.fontFamily,
       fontSize: theme.typography.pxToRem(12),
@@ -1634,6 +1678,7 @@ var _helpers = __webpack_require__(/*! ../utils/helpers */ "./node_modules/@mate
 // @inheritedComponent ButtonBase
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: (0, _objectSpread2.default)({}, theme.typography.button, {
       lineHeight: '1.4em',
       // Improve readability for multiline button.
@@ -1661,12 +1706,18 @@ var styles = function styles(theme) {
         color: theme.palette.action.disabled
       }
     }),
+
+    /* Styles applied to the span element that wraps the children. */
     label: {
       display: 'inherit',
       alignItems: 'inherit',
       justifyContent: 'inherit'
     },
+
+    /* Styles applied to the root element if `variant="text"`. */
     text: {},
+
+    /* Styles applied to the root element if `variant="text"` and `color="primary"`. */
     textPrimary: {
       color: theme.palette.primary.main,
       '&:hover': {
@@ -1677,6 +1728,8 @@ var styles = function styles(theme) {
         }
       }
     },
+
+    /* Styles applied to the root element if `variant="text"` and `color="secondary"`. */
     textSecondary: {
       color: theme.palette.secondary.main,
       '&:hover': {
@@ -1687,15 +1740,22 @@ var styles = function styles(theme) {
         }
       }
     },
+
+    /* Styles applied to the root element for backwards compatibility with legacy variant naming. */
     flat: {},
-    // legacy
+
+    /* Styles applied to the root element for backwards compatibility with legacy variant naming. */
     flatPrimary: {},
-    // legacy
+
+    /* Styles applied to the root element for backwards compatibility with legacy variant naming. */
     flatSecondary: {},
-    // legacy
+
+    /* Styles applied to the root element if `variant="outlined"`. */
     outlined: {
       border: "1px solid ".concat(theme.palette.type === 'light' ? 'rgba(0, 0, 0, 0.23)' : 'rgba(255, 255, 255, 0.23)')
     },
+
+    /* Styles applied to the root element if `variant="[contained | fab]"`. */
     contained: {
       color: theme.palette.getContrastText(theme.palette.grey[300]),
       backgroundColor: theme.palette.grey[300],
@@ -1722,6 +1782,8 @@ var styles = function styles(theme) {
         }
       }
     },
+
+    /* Styles applied to the root element if `variant="[contained | fab|"` and `color="primary"`. */
     containedPrimary: {
       color: theme.palette.primary.contrastText,
       backgroundColor: theme.palette.primary.main,
@@ -1733,6 +1795,8 @@ var styles = function styles(theme) {
         }
       }
     },
+
+    /* Styles applied to the root element if `variant="[contained | fab]"` and `color="secondary"`. */
     containedSecondary: {
       color: theme.palette.secondary.contrastText,
       backgroundColor: theme.palette.secondary.main,
@@ -1744,12 +1808,20 @@ var styles = function styles(theme) {
         }
       }
     },
+
+    /* Styles applied to the root element for backwards compatibility with legacy variant naming. */
     raised: {},
     // legacy
+
+    /* Styles applied to the root element for backwards compatibility with legacy variant naming. */
     raisedPrimary: {},
     // legacy
+
+    /* Styles applied to the root element for backwards compatibility with legacy variant naming. */
     raisedSecondary: {},
     // legacy
+
+    /* Styles applied to the root element if `variant="[fab | extendedFab]"`. */
     fab: {
       borderRadius: '50%',
       padding: 0,
@@ -1761,6 +1833,8 @@ var styles = function styles(theme) {
         boxShadow: theme.shadows[12]
       }
     },
+
+    /* Styles applied to the root element if `variant="extendedFab"`. */
     extendedFab: {
       borderRadius: 48 / 2,
       padding: '0 16px',
@@ -1768,27 +1842,41 @@ var styles = function styles(theme) {
       minWidth: 48,
       height: 48
     },
+
+    /* Styles applied to the ButtonBase root element if the button is keyboard focused. */
     focusVisible: {},
+
+    /* Styles applied to the root element if `disabled={true}`. */
     disabled: {},
+
+    /* Styles applied to the root element if `color="inherit"`. */
     colorInherit: {
       color: 'inherit'
     },
+
+    /* Styles applied to the root element if `size="mini"` & `variant="[fab | extendedFab]"`. */
     mini: {
       width: 40,
       height: 40
     },
+
+    /* Styles applied to the root element if `size="small"`. */
     sizeSmall: {
       padding: '7px 8px',
       minWidth: 64,
       minHeight: 32,
       fontSize: theme.typography.pxToRem(13)
     },
+
+    /* Styles applied to the root element if `size="large"`. */
     sizeLarge: {
       padding: '8px 24px',
       minWidth: 112,
       minHeight: 40,
       fontSize: theme.typography.pxToRem(15)
     },
+
+    /* Styles applied to the root element if `fullWidth={true}`. */
     fullWidth: {
       width: '100%'
     }
@@ -2007,6 +2095,7 @@ var _TouchRipple = _interopRequireDefault(__webpack_require__(/*! ./TouchRipple 
 var _createRippleHandler = _interopRequireDefault(__webpack_require__(/*! ./createRippleHandler */ "./node_modules/@material-ui/core/ButtonBase/createRippleHandler.js"));
 
 var styles = {
+  /* Styles applied to the root element. */
   root: {
     display: 'inline-flex',
     alignItems: 'center',
@@ -2044,7 +2133,11 @@ var styles = {
       cursor: 'default'
     }
   },
+
+  /* Styles applied to the root element if `disabled={true}`. */
   disabled: {},
+
+  /* Styles applied to the root element if keyboard focused. */
   focusVisible: {}
 };
 /* istanbul ignore if */
@@ -2366,7 +2459,7 @@ ButtonBase.propTypes =  true ? {
 
   /**
    * This property can help a person know which element has the keyboard focus.
-   * The class name will be applied when the element gain the focus throught a keyboard interaction.
+   * The class name will be applied when the element gain the focus through a keyboard interaction.
    * It's a polyfill for the [CSS :focus-visible feature](https://drafts.csswg.org/selectors-4/#the-focus-visible-pseudo).
    * The rational for using this feature [is explain here](https://github.com/WICG/focus-visible/blob/master/explainer.md).
    */
@@ -2676,6 +2769,7 @@ exports.DELAY_RIPPLE = DELAY_RIPPLE;
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       display: 'block',
       position: 'absolute',
@@ -2688,6 +2782,8 @@ var styles = function styles(theme) {
       pointerEvents: 'none',
       zIndex: 0
     },
+
+    /* Styles applied to the internal `Ripple` components `ripple` class. */
     ripple: {
       width: 50,
       height: 50,
@@ -2696,14 +2792,20 @@ var styles = function styles(theme) {
       opacity: 0,
       position: 'absolute'
     },
+
+    /* Styles applied to the internal `Ripple` components `rippleVisible` class. */
     rippleVisible: {
       opacity: 0.3,
       transform: 'scale(1)',
       animation: "mui-ripple-enter ".concat(DURATION, "ms ").concat(theme.transitions.easing.easeInOut)
     },
+
+    /* Styles applied to the internal `Ripple` components `ripplePulsate` class. */
     ripplePulsate: {
       animationDuration: "".concat(theme.transitions.duration.shorter, "ms")
     },
+
+    /* Styles applied to the internal `Ripple` components `child` class. */
     child: {
       opacity: 1,
       display: 'block',
@@ -2712,10 +2814,14 @@ var styles = function styles(theme) {
       borderRadius: '50%',
       backgroundColor: 'currentColor'
     },
+
+    /* Styles applied to the internal `Ripple` components `childLeaving` class. */
     childLeaving: {
       opacity: 0,
       animation: "mui-ripple-exit ".concat(DURATION, "ms ").concat(theme.transitions.easing.easeInOut)
     },
+
+    /* Styles applied to the internal `Ripple` components `childPulsate` class. */
     childPulsate: {
       position: 'absolute',
       left: 0,
@@ -2890,7 +2996,7 @@ function (_React$PureComponent) {
       }, cb);
     }, _this.stop = function (event, cb) {
       clearTimeout(_this.startTimer);
-      var ripples = _this.state.ripples; // The touch interaction occures to quickly.
+      var ripples = _this.state.ripples; // The touch interaction occurs too quickly.
       // We still want to show ripple effect.
 
       if (event.type === 'touchend' && _this.startTimerCommit) {
@@ -2991,7 +3097,7 @@ function createRippleHandler(instance, eventName, action, cb) {
       cb.call(instance, event);
     }
 
-    var ignore = false;
+    var ignore = false; // Ignore events that have been `event.preventDefault()` marked.
 
     if (event.defaultPrevented) {
       ignore = true;
@@ -3148,6 +3254,7 @@ var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withS
 
 // @inheritedComponent Paper
 var styles = {
+  /* Styles applied to the root element. */
   root: {
     overflow: 'hidden'
   }
@@ -3258,6 +3365,7 @@ __webpack_require__(/*! ../Button */ "./node_modules/@material-ui/core/Button/in
 // So we don't have any override priority issue.
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: (0, _defineProperty2.default)({
       display: 'flex',
       alignItems: 'center',
@@ -3266,6 +3374,8 @@ var styles = function styles(theme) {
     }, theme.breakpoints.up('sm'), {
       padding: '8px 12px'
     }),
+
+    /* Styles applied to the children. */
     action: {
       margin: '0 4px'
     }
@@ -3376,6 +3486,7 @@ var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withS
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: theme.mixins.gutters({
       paddingTop: 16,
       paddingBottom: 16,
@@ -3487,26 +3598,37 @@ var _Typography = _interopRequireDefault(__webpack_require__(/*! ../Typography *
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: theme.mixins.gutters({
       display: 'flex',
       alignItems: 'center',
       paddingTop: 16,
       paddingBottom: 16
     }),
+
+    /* Styles applied to the avatar element. */
     avatar: {
       flex: '0 0 auto',
       marginRight: 16
     },
+
+    /* Styles applied to the action element. */
     action: {
       flex: '0 0 auto',
       alignSelf: 'flex-start',
       marginTop: -8,
       marginRight: -16
     },
+
+    /* Styles applied to the content wrapper element. */
     content: {
       flex: '1 1 auto'
     },
+
+    /* Styles applied to the title Typography element. */
     title: {},
+
+    /* Styles applied to the subheader Typography element. */
     subheader: {}
   };
 };
@@ -3519,25 +3641,40 @@ function CardHeader(props) {
       classes = props.classes,
       classNameProp = props.className,
       Component = props.component,
-      subheader = props.subheader,
-      title = props.title,
-      other = (0, _objectWithoutProperties2.default)(props, ["action", "avatar", "classes", "className", "component", "subheader", "title"]);
+      disableTypography = props.disableTypography,
+      subheaderProp = props.subheader,
+      subheaderTypographyProps = props.subheaderTypographyProps,
+      titleProp = props.title,
+      titleTypographyProps = props.titleTypographyProps,
+      other = (0, _objectWithoutProperties2.default)(props, ["action", "avatar", "classes", "className", "component", "disableTypography", "subheader", "subheaderTypographyProps", "title", "titleTypographyProps"]);
+  var title = titleProp;
+
+  if (title != null && title.type !== _Typography.default && !disableTypography) {
+    title = _react.default.createElement(_Typography.default, (0, _extends2.default)({
+      variant: avatar ? 'body2' : 'headline',
+      className: classes.title,
+      component: "span"
+    }, titleTypographyProps), title);
+  }
+
+  var subheader = subheaderProp;
+
+  if (subheader != null && subheader.type !== _Typography.default && !disableTypography) {
+    subheader = _react.default.createElement(_Typography.default, (0, _extends2.default)({
+      variant: avatar ? 'body2' : 'body1',
+      className: classes.subheader,
+      color: "textSecondary",
+      component: "span"
+    }, subheaderTypographyProps), subheader);
+  }
+
   return _react.default.createElement(Component, (0, _extends2.default)({
     className: (0, _classnames.default)(classes.root, classNameProp)
   }, other), avatar && _react.default.createElement("div", {
     className: classes.avatar
   }, avatar), _react.default.createElement("div", {
     className: classes.content
-  }, _react.default.createElement(_Typography.default, {
-    variant: avatar ? 'body2' : 'headline',
-    component: "span",
-    className: classes.title
-  }, title), subheader && _react.default.createElement(_Typography.default, {
-    variant: avatar ? 'body2' : 'body1',
-    component: "span",
-    color: "textSecondary",
-    className: classes.subheader
-  }, subheader)), action && _react.default.createElement("div", {
+  }, title, subheader), action && _react.default.createElement("div", {
     className: classes.action
   }, action));
 }
@@ -3571,17 +3708,38 @@ CardHeader.propTypes =  true ? {
   component: _propTypes.default.oneOfType([_propTypes.default.string, _propTypes.default.func, _propTypes.default.object]),
 
   /**
+   * If `true`, the children won't be wrapped by a Typography component.
+   * This can be useful to render an alternative Typography variant by wrapping
+   * the `title` text, and optional `subheader` text
+   * with the Typography component.
+   */
+  disableTypography: _propTypes.default.bool,
+
+  /**
    * The content of the component.
    */
   subheader: _propTypes.default.node,
 
   /**
+   * These props will be forwarded to the subheader
+   * (as long as disableTypography is not `true`).
+   */
+  subheaderTypographyProps: _propTypes.default.object,
+
+  /**
    * The content of the Card Title.
    */
-  title: _propTypes.default.node
+  title: _propTypes.default.node,
+
+  /**
+   * These props will be forwarded to the title
+   * (as long as disableTypography is not `true`).
+   */
+  titleTypographyProps: _propTypes.default.object
 } : undefined;
 CardHeader.defaultProps = {
-  component: 'div'
+  component: 'div',
+  disableTypography: false
 };
 
 var _default = (0, _withStyles.default)(styles, {
@@ -3654,12 +3812,15 @@ var _warning = _interopRequireDefault(__webpack_require__(/*! warning */ "./node
 var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/styles/withStyles.js"));
 
 var styles = {
+  /* Styles applied to the root element. */
   root: {
     display: 'block',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center'
   },
+
+  /* Styles applied to the root element if `component="video, audio, picture, iframe, or img"`. */
   media: {
     width: '100%'
   }
@@ -3803,11 +3964,18 @@ var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withS
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       color: theme.palette.text.secondary
     },
+
+    /* Styles applied to the root element if `checked={true}`. */
     checked: {},
+
+    /* Styles applied to the root element if `disabled={true}`. */
     disabled: {},
+
+    /* Styles applied to the root element if `color="primary"`. */
     colorPrimary: {
       '&$checked': {
         color: theme.palette.primary.main
@@ -3816,6 +3984,8 @@ var styles = function styles(theme) {
         color: theme.palette.action.disabled
       }
     },
+
+    /* Styles applied to the root element if `color="secondary"`. */
     colorSecondary: {
       '&$checked': {
         color: theme.palette.secondary.main
@@ -4026,6 +4196,7 @@ var styles = function styles(theme) {
   var backgroundColor = theme.palette.type === 'light' ? theme.palette.grey[300] : theme.palette.grey[700];
   var deleteIconColor = (0, _colorManipulator.fade)(theme.palette.text.primary, 0.26);
   return {
+    /* Styles applied to the root element. */
     root: {
       fontFamily: theme.typography.fontFamily,
       fontSize: theme.typography.pxToRem(13),
@@ -4048,6 +4219,8 @@ var styles = function styles(theme) {
       padding: 0 // Remove `button` padding
 
     },
+
+    /* Styles applied to the root element if `onClick` is defined or `clickable={true}`. */
     clickable: {
       // Remove grey highlight
       WebkitTapHighlightColor: 'transparent',
@@ -4060,11 +4233,15 @@ var styles = function styles(theme) {
         backgroundColor: (0, _colorManipulator.emphasize)(backgroundColor, 0.12)
       }
     },
+
+    /* Styles applied to the root element if `onDelete` is defined. */
     deletable: {
       '&:focus': {
         backgroundColor: (0, _colorManipulator.emphasize)(backgroundColor, 0.08)
       }
     },
+
+    /* Styles applied to the `avatar` element if `checked={true}`. */
     avatar: {
       marginRight: -4,
       width: height,
@@ -4072,10 +4249,14 @@ var styles = function styles(theme) {
       color: theme.palette.type === 'light' ? theme.palette.grey[700] : theme.palette.grey[300],
       fontSize: theme.typography.pxToRem(16)
     },
+
+    /* Styles applied to the `avartar` elements children. */
     avatarChildren: {
       width: 19,
       height: 19
     },
+
+    /* Styles applied to the label `span` element`. */
     label: {
       display: 'flex',
       alignItems: 'center',
@@ -4085,6 +4266,8 @@ var styles = function styles(theme) {
       whiteSpace: 'nowrap',
       cursor: 'inherit'
     },
+
+    /* Styles applied to the `deleteIcon` element. */
     deleteIcon: {
       // Remove grey highlight
       WebkitTapHighlightColor: 'transparent',
@@ -4213,8 +4396,8 @@ function (_React$Component) {
         tabIndex: tabIndex,
         onClick: onClick,
         onKeyDown: this.handleKeyDown,
-        ref: function ref(node) {
-          _this2.chipRef = node;
+        ref: function ref(_ref2) {
+          _this2.chipRef = _ref2;
         }
       }, other), avatar, _react.default.createElement("span", {
         className: classes.label
@@ -4385,32 +4568,49 @@ function easeIn(t) {
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       display: 'inline-block',
       lineHeight: 1 // Keep the progress centered
 
     },
+
+    /* Styles applied to the root element if `variant="static"`. */
     static: {
       transition: theme.transitions.create('transform')
     },
+
+    /* Styles applied to the root element if `variant="indeterminate"`. */
     indeterminate: {
       animation: 'mui-progress-circular-rotate 1.4s linear infinite'
     },
+
+    /* Styles applied to the root element if `color="primary"`. */
     colorPrimary: {
       color: theme.palette.primary.main
     },
+
+    /* Styles applied to the root element if `color="secondary"`. */
     colorSecondary: {
       color: theme.palette.secondary.main
     },
+
+    /* Styles applied to the `svg` element. */
     svg: {},
+
+    /* Styles applied to the `circle` svg path. */
     circle: {
       stroke: 'currentColor' // Use butt to follow the specification, by chance, it's already the default CSS value.
       // strokeLinecap: 'butt',
 
     },
+
+    /* Styles applied to the `circle` svg path if `variant="static"`. */
     circleStatic: {
       transition: theme.transitions.create('stroke-dashoffset')
     },
+
+    /* Styles applied to the `circle` svg path if `variant="indeterminate"`. */
     circleIndeterminate: {
       animation: 'mui-progress-circular-dash 1.4s ease-in-out infinite',
       // Some default value that looks fine waiting for the animation to kicks in.
@@ -4819,18 +5019,25 @@ var _utils = __webpack_require__(/*! ../transitions/utils */ "./node_modules/@ma
 // @inheritedComponent Transition
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the container element. */
     container: {
       height: 0,
       overflow: 'hidden',
       transition: theme.transitions.create('height')
     },
+
+    /* Styles applied to the container element when the transition has entered. */
     entered: {
       height: 'auto'
     },
+
+    /* Styles applied to the outer wrapper element. */
     wrapper: {
       // Hack to get children with a negative margin to not falsify the height computation.
       display: 'flex'
     },
+
+    /* Styles applied to the outer wrapper element. */
     wrapperInner: {
       width: '100%'
     }
@@ -4871,7 +5078,7 @@ function (_React$Component) {
       var _this$props = _this.props,
           timeout = _this$props.timeout,
           theme = _this$props.theme;
-      var wrapperHeight = _this.wrapper ? _this.wrapper.clientHeight : 0;
+      var wrapperHeight = _this.wrapperRef ? _this.wrapperRef.clientHeight : 0;
 
       var _getTransitionProps = (0, _utils.getTransitionProps)(_this.props, {
         mode: 'enter'
@@ -4898,7 +5105,7 @@ function (_React$Component) {
         _this.props.onEntered(node);
       }
     }, _this.handleExit = function (node) {
-      var wrapperHeight = _this.wrapper ? _this.wrapper.clientHeight : 0;
+      var wrapperHeight = _this.wrapperRef ? _this.wrapperRef.clientHeight : 0;
       node.style.height = "".concat(wrapperHeight, "px");
 
       if (_this.props.onExit) {
@@ -4908,7 +5115,7 @@ function (_React$Component) {
       var _this$props2 = _this.props,
           timeout = _this$props2.timeout,
           theme = _this$props2.theme;
-      var wrapperHeight = _this.wrapper ? _this.wrapper.clientHeight : 0;
+      var wrapperHeight = _this.wrapperRef ? _this.wrapperRef.clientHeight : 0;
 
       var _getTransitionProps2 = (0, _utils.getTransitionProps)(_this.props, {
         mode: 'exit'
@@ -4976,8 +5183,8 @@ function (_React$Component) {
           })
         }, childProps), _react.default.createElement("div", {
           className: classes.wrapper,
-          ref: function ref(node) {
-            _this2.wrapper = node;
+          ref: function ref(_ref2) {
+            _this2.wrapperRef = _ref2;
           }
         }, _react.default.createElement("div", {
           className: classes.wrapperInner
@@ -5290,16 +5497,23 @@ var _Paper = _interopRequireDefault(__webpack_require__(/*! ../Paper */ "./node_
 // @inheritedComponent Modal
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {},
+
+    /* Styles applied to the root element if `scroll="paper"`. */
     scrollPaper: {
       display: 'flex',
       justifyContent: 'center',
       alignItems: 'center'
     },
+
+    /* Styles applied to the root element if `scroll="bodyr"`. */
     scrollBody: {
       overflowY: 'auto',
       overflowX: 'hidden'
     },
+
+    /* Styles applied to the `Paper` component. */
     paper: {
       display: 'flex',
       flexDirection: 'column',
@@ -5310,34 +5524,48 @@ var styles = function styles(theme) {
       // We disable the focus ring for mouse, touch and keyboard users.
       outline: 'none'
     },
+
+    /* Styles applied to the `Paper` component if `scroll="paper"`. */
     paperScrollPaper: {
       flex: '0 1 auto',
       maxHeight: 'calc(100% - 96px)'
     },
+
+    /* Styles applied to the `Paper` component if `scroll="body"`. */
     paperScrollBody: {
       margin: '48px auto'
     },
+
+    /* Styles applied to the `Paper` component if `maxWidth="xs"`. */
     paperWidthXs: {
       maxWidth: Math.max(theme.breakpoints.values.xs, 360),
       '&$paperScrollBody': (0, _defineProperty2.default)({}, theme.breakpoints.down(Math.max(theme.breakpoints.values.xs, 360) + 48 * 2), {
         margin: 48
       })
     },
+
+    /* Styles applied to the `Paper` component if `maxWidth="sm"`. */
     paperWidthSm: {
       maxWidth: theme.breakpoints.values.sm,
       '&$paperScrollBody': (0, _defineProperty2.default)({}, theme.breakpoints.down(theme.breakpoints.values.sm + 48 * 2), {
         margin: 48
       })
     },
+
+    /* Styles applied to the `Paper` component if `maxWidth="md"`. */
     paperWidthMd: {
       maxWidth: theme.breakpoints.values.md,
       '&$paperScrollBody': (0, _defineProperty2.default)({}, theme.breakpoints.down(theme.breakpoints.values.md + 48 * 2), {
         margin: 48
       })
     },
+
+    /* Styles applied to the `Paper` component if `fullWidth={true}`. */
     paperFullWidth: {
       width: '100%'
     },
+
+    /* Styles applied to the `Paper` component if `fullScreen={true}`. */
     paperFullScreen: {
       margin: 0,
       width: '100%',
@@ -5626,6 +5854,7 @@ __webpack_require__(/*! ../Button */ "./node_modules/@material-ui/core/Button/in
 
 // So we don't have any override priority issue.
 var styles = {
+  /* Styles applied to the root element. */
   root: {
     display: 'flex',
     alignItems: 'center',
@@ -5633,6 +5862,8 @@ var styles = {
     flex: '0 0 auto',
     margin: '8px 4px'
   },
+
+  /* Styles applied to the children. */
   action: {
     margin: '0 4px'
   }
@@ -5740,6 +5971,7 @@ var _classnames = _interopRequireDefault(__webpack_require__(/*! classnames */ "
 var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/styles/withStyles.js"));
 
 var styles = {
+  /* Styles applied to the root element. */
   root: {
     flex: '1 1 auto',
     overflowY: 'auto',
@@ -5849,6 +6081,7 @@ var _Typography = _interopRequireDefault(__webpack_require__(/*! ../Typography *
 // @inheritedComponent Typography
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       color: theme.palette.text.secondary
     }
@@ -5953,6 +6186,7 @@ var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withS
 var _Typography = _interopRequireDefault(__webpack_require__(/*! ../Typography */ "./node_modules/@material-ui/core/Typography/index.js"));
 
 var styles = {
+  /* Styles applied to the root element. */
   root: {
     margin: 0,
     padding: '24px 24px 20px',
@@ -6070,6 +6304,7 @@ var _colorManipulator = __webpack_require__(/*! ../styles/colorManipulator */ ".
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       height: 1,
       margin: 0,
@@ -6078,15 +6313,21 @@ var styles = function styles(theme) {
       flexShrink: 0,
       backgroundColor: theme.palette.divider
     },
+
+    /* Styles applied to the root element if `absolute={true}`. */
     absolute: {
       position: 'absolute',
       bottom: 0,
       left: 0,
       width: '100%'
     },
+
+    /* Styles applied to the root element if `inset={true}`. */
     inset: {
       marginLeft: 72
     },
+
+    /* Styles applied to the root element if `light={true}`. */
     light: {
       backgroundColor: (0, _colorManipulator.fade)(theme.palette.divider, 0.08)
     }
@@ -6252,9 +6493,12 @@ function getAnchor(props) {
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element if `variant="permanent or persistent"`. */
     docked: {
       flex: '0 0 auto'
     },
+
+    /* Styles applied to the `Paper` component. */
     paper: {
       overflowY: 'auto',
       display: 'flex',
@@ -6272,14 +6516,20 @@ var styles = function styles(theme) {
       // :focus-ring CSS pseudo-class will help.
       outline: 'none'
     },
+
+    /* Styles applied to the `Paper` component if `anchor="left"`. */
     paperAnchorLeft: {
       left: 0,
       right: 'auto'
     },
+
+    /* Styles applied to the `Paper` component if `anchor="right"`. */
     paperAnchorRight: {
       left: 'auto',
       right: 0
     },
+
+    /* Styles applied to the `Paper` component if `anchor="top"`. */
     paperAnchorTop: {
       top: 0,
       left: 0,
@@ -6288,6 +6538,8 @@ var styles = function styles(theme) {
       height: 'auto',
       maxHeight: '100vh'
     },
+
+    /* Styles applied to the `Paper` component if `anchor="bottom"`. */
     paperAnchorBottom: {
       top: 'auto',
       left: 0,
@@ -6296,20 +6548,29 @@ var styles = function styles(theme) {
       height: 'auto',
       maxHeight: '100vh'
     },
+
+    /* Styles applied to the `Paper` component if `anchor="left"` & `variant` is not "temporary". */
     paperAnchorDockedLeft: {
       borderRight: "1px solid ".concat(theme.palette.divider)
     },
+
+    /* Styles applied to the `Paper` component if `anchor="top"` & `variant` is not "temporary". */
     paperAnchorDockedTop: {
       borderBottom: "1px solid ".concat(theme.palette.divider)
     },
+
+    /* Styles applied to the `Paper` component if `anchor="right"` & `variant` is not "temporary". */
     paperAnchorDockedRight: {
       borderLeft: "1px solid ".concat(theme.palette.divider)
     },
+
+    /* Styles applied to the `Paper` component if `anchor="bottom"` & `variant` is not "temporary". */
     paperAnchorDockedBottom: {
       borderTop: "1px solid ".concat(theme.palette.divider)
     },
-    modal: {} // Just here so people can override the style.
 
+    /* Styles applied to the `Modal` component. */
+    modal: {}
   };
 };
 /**
@@ -6591,6 +6852,7 @@ var styles = function styles(theme) {
     duration: theme.transitions.duration.shortest
   };
   return {
+    /* Styles applied to the root element. */
     root: {
       position: 'relative',
       transition: theme.transitions.create(['margin'], transition),
@@ -6622,6 +6884,8 @@ var styles = function styles(theme) {
         }
       }
     },
+
+    /* Styles applied to the root element if `expanded={true}`. */
     expanded: {
       margin: '16px 0',
       '&:first-child': {
@@ -6634,6 +6898,8 @@ var styles = function styles(theme) {
         opacity: 0
       }
     },
+
+    /* Styles applied to the root element if `disabled={true}`. */
     disabled: {
       backgroundColor: theme.palette.action.disabledBackground
     }
@@ -6854,12 +7120,15 @@ __webpack_require__(/*! ../Button */ "./node_modules/@material-ui/core/Button/in
 
 // So we don't have any override priority issue.
 var styles = {
+  /* Styles applied to the root element. */
   root: {
     display: 'flex',
     alignItems: 'center',
     justifyContent: 'flex-end',
     padding: '16px 8px'
   },
+
+  /* Styles applied to the children. */
   action: {
     marginLeft: 8
   }
@@ -6958,6 +7227,7 @@ var _classnames = _interopRequireDefault(__webpack_require__(/*! classnames */ "
 var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/styles/withStyles.js"));
 
 var styles = {
+  /* Styles applied to the root element. */
   root: {
     display: 'flex',
     padding: '8px 24px 24px'
@@ -7076,6 +7346,7 @@ var styles = function styles(theme) {
     duration: theme.transitions.duration.shortest
   };
   return {
+    /* Styles applied to the root element. */
     root: {
       display: 'flex',
       minHeight: 8 * 6,
@@ -7094,9 +7365,17 @@ var styles = function styles(theme) {
         opacity: 0.38
       }
     },
+
+    /* Styles applied to the root element if `expanded={true}`. */
     expanded: {},
+
+    /* Styles applied to the root and children wrapper elements when focused. */
     focused: {},
+
+    /* Styles applied to the root element if `disabled={true}`. */
     disabled: {},
+
+    /* Styles applied to the children wrapper element. */
     content: {
       display: 'flex',
       flexGrow: 1,
@@ -7109,6 +7388,8 @@ var styles = function styles(theme) {
         margin: '20px 0'
       }
     },
+
+    /* Styles applied to the `IconButton` component when `expandIcon` is supplied. */
     expandIcon: {
       position: 'absolute',
       top: '50%',
@@ -7553,6 +7834,7 @@ var _helpers = __webpack_require__(/*! ../utils/helpers */ "./node_modules/@mate
 var _reactHelpers = __webpack_require__(/*! ../utils/reactHelpers */ "./node_modules/@material-ui/core/utils/reactHelpers.js");
 
 var styles = {
+  /* Styles applied to the root element. */
   root: {
     display: 'inline-flex',
     flexDirection: 'column',
@@ -7563,14 +7845,20 @@ var styles = {
     margin: 0,
     border: 0
   },
+
+  /* Styles applied to the root element if `margin="normal"`. */
   marginNormal: {
     marginTop: 16,
     marginBottom: 8
   },
+
+  /* Styles applied to the root element if `margin="dense"`. */
   marginDense: {
     marginTop: 8,
     marginBottom: 4
   },
+
+  /* Styles applied to the root element if `fullWidth={true}`. */
   fullWidth: {
     width: '100%'
   }
@@ -7842,6 +8130,7 @@ var _Typography = _interopRequireDefault(__webpack_require__(/*! ../Typography *
 /* eslint-disable jsx-a11y/label-has-for */
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       display: 'inline-flex',
       alignItems: 'center',
@@ -7857,7 +8146,11 @@ var styles = function styles(theme) {
         cursor: 'default'
       }
     },
+
+    /* Styles applied to the root element if `disabled={true}`. */
     disabled: {},
+
+    /* Styles applied to the label's Typography component. */
     label: {
       '&$disabled': {
         color: theme.palette.text.disabled
@@ -8038,11 +8331,14 @@ var _classnames = _interopRequireDefault(__webpack_require__(/*! classnames */ "
 var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/styles/withStyles.js"));
 
 var styles = {
+  /* Styles applied to the root element. */
   root: {
     display: 'flex',
     flexDirection: 'column',
     flexWrap: 'wrap'
   },
+
+  /* Styles applied to the root element if `row={true}`. */
   row: {
     flexDirection: 'row'
   }
@@ -8159,6 +8455,7 @@ var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withS
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       color: theme.palette.text.secondary,
       fontFamily: theme.typography.fontFamily,
@@ -8175,8 +8472,14 @@ var styles = function styles(theme) {
         color: theme.palette.text.disabled
       }
     },
+
+    /* Styles applied to the root element if `error={true}`. */
     error: {},
+
+    /* Styles applied to the root element if `disabled={true}`. */
     disabled: {},
+
+    /* Styles applied to the root element if `margin="dense"`. */
     marginDense: {
       marginTop: 4
     }
@@ -8333,6 +8636,7 @@ var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withS
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       fontFamily: theme.typography.fontFamily,
       color: theme.palette.text.secondary,
@@ -8349,8 +8653,14 @@ var styles = function styles(theme) {
         color: theme.palette.error.main
       }
     },
+
+    /* Styles applied to the root element if `focused={true}`. */
     focused: {},
+
+    /* Styles applied to the root element if `disabled={true}`. */
     disabled: {},
+
+    /* Styles applied to the root element if `error={true}`. */
     error: {},
     asterisk: {
       '&$error': {
@@ -8609,73 +8919,119 @@ function generateGutter(theme, breakpoint) {
 
 var styles = function styles(theme) {
   return (0, _objectSpread2.default)({
+    /* Styles applied to the root element if `container={true}`. */
     container: {
       boxSizing: 'border-box',
       display: 'flex',
       flexWrap: 'wrap',
       width: '100%'
     },
+
+    /* Styles applied to the root element if `item={true}`. */
     item: {
       boxSizing: 'border-box',
       margin: '0' // For instance, it's useful when used with a `figure` element.
 
     },
+
+    /* Styles applied to the root element if `zeroMinWidth={true}`. */
     zeroMinWidth: {
       minWidth: 0
     },
+
+    /* Styles applied to the root element if `direction="column"`. */
     'direction-xs-column': {
       flexDirection: 'column'
     },
+
+    /* Styles applied to the root element if `direction="column-reverse"`. */
     'direction-xs-column-reverse': {
       flexDirection: 'column-reverse'
     },
+
+    /* Styles applied to the root element if `direction="rwo-reverse"`. */
     'direction-xs-row-reverse': {
       flexDirection: 'row-reverse'
     },
+
+    /* Styles applied to the root element if `wrap="nowrap"`. */
     'wrap-xs-nowrap': {
       flexWrap: 'nowrap'
     },
+
+    /* Styles applied to the root element if `wrap="reverse"`. */
     'wrap-xs-wrap-reverse': {
       flexWrap: 'wrap-reverse'
     },
+
+    /* Styles applied to the root element if `alignItems="center"`. */
     'align-items-xs-center': {
       alignItems: 'center'
     },
+
+    /* Styles applied to the root element if `alignItems="flex-start"`. */
     'align-items-xs-flex-start': {
       alignItems: 'flex-start'
     },
+
+    /* Styles applied to the root element if `alignItems="flex-end"`. */
     'align-items-xs-flex-end': {
       alignItems: 'flex-end'
     },
+
+    /* Styles applied to the root element if `alignItems="baseline"`. */
     'align-items-xs-baseline': {
       alignItems: 'baseline'
     },
+
+    /* Styles applied to the root element if `alignContent="center"`. */
     'align-content-xs-center': {
       alignContent: 'center'
     },
+
+    /* Styles applied to the root element if `alignContent="flex-start"`. */
     'align-content-xs-flex-start': {
       alignContent: 'flex-start'
     },
+
+    /* Styles applied to the root element if `alignContent="flex-end"`. */
     'align-content-xs-flex-end': {
       alignContent: 'flex-end'
     },
+
+    /* Styles applied to the root element if `alignContent="space-between"`. */
     'align-content-xs-space-between': {
       alignContent: 'space-between'
     },
+
+    /* Styles applied to the root element if `alignContent="space-around"`. */
     'align-content-xs-space-around': {
       alignContent: 'space-around'
     },
+
+    /* Styles applied to the root element if `justify="center"`. */
     'justify-xs-center': {
       justifyContent: 'center'
     },
+
+    /* Styles applied to the root element if `justify="flex-end"`. */
     'justify-xs-flex-end': {
       justifyContent: 'flex-end'
     },
+
+    /* Styles applied to the root element if `justify="space-between"`. */
     'justify-xs-space-between': {
       justifyContent: 'space-between'
     },
+
+    /* Styles applied to the root element if `justify="space-around"`. */
     'justify-xs-space-around': {
       justifyContent: 'space-around'
+    },
+
+    /* Styles applied to the root element if `justify="space-evenly"`. */
+    'justify-xs-space-evenly': {
+      justifyContent: 'space-evenly'
     }
   }, generateGutter(theme, 'xs'), _createBreakpoints.keys.reduce(function (accumulator, key) {
     // Use side effect over immutability for better performance.
@@ -8770,7 +9126,7 @@ Grid.propTypes =  true ? {
    * Defines the `justify-content` style property.
    * It is applied for all screen sizes.
    */
-  justify: _propTypes.default.oneOf(['flex-start', 'center', 'flex-end', 'space-between', 'space-around']),
+  justify: _propTypes.default.oneOf(['flex-start', 'center', 'flex-end', 'space-between', 'space-around', 'space-evenly']),
 
   /**
    * Defines the number of grids the component is going to use.
@@ -8923,6 +9279,7 @@ var _warning = _interopRequireDefault(__webpack_require__(/*! warning */ "./node
 var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/styles/withStyles.js"));
 
 var styles = {
+  /* Styles applied to the root element. */
   root: {
     display: 'flex',
     flexWrap: 'wrap',
@@ -9098,23 +9455,30 @@ var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withS
 
 // < 1kb payload overhead when lodash/debounce is > 3kb.
 var styles = {
+  /* Styles applied to the root element. */
   root: {
     boxSizing: 'border-box',
     flexShrink: 0
   },
+
+  /* Styles applied to the `div` element that wraps the children. */
   tile: {
     position: 'relative',
     display: 'block',
-    // In case it's not renderd with a div.
+    // In case it's not rendered with a div.
     height: '100%',
     overflow: 'hidden'
   },
+
+  /* Styles applied to an `ing` element child, if if needed to ensure it covers the tile. */
   imgFullHeight: {
     height: '100%',
     transform: 'translateX(-50%)',
     position: 'relative',
     left: '50%'
   },
+
+  /* Styles applied to an `ing` element child, if if needed to ensure it covers the tile. */
   imgFullWidth: {
     width: '100%',
     position: 'relative',
@@ -9344,6 +9708,7 @@ var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withS
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       position: 'absolute',
       left: 0,
@@ -9354,15 +9719,23 @@ var styles = function styles(theme) {
       alignItems: 'center',
       fontFamily: theme.typography.fontFamily
     },
+
+    /* Styles applied to the root element if `titlePosition="bottom"`. */
     titlePositionBottom: {
       bottom: 0
     },
+
+    /* Styles applied to the root element if `titlePosition="top"`. */
     titlePositionTop: {
       top: 0
     },
+
+    /* Styles applied to the root element if a `subtitle` is provided. */
     rootSubtitle: {
       height: 68
     },
+
+    /* Styles applied to the title and subtitle container element. */
     titleWrap: {
       flexGrow: 1,
       marginLeft: theme.mixins.gutters().paddingLeft,
@@ -9370,12 +9743,18 @@ var styles = function styles(theme) {
       color: theme.palette.common.white,
       overflow: 'hidden'
     },
+
+    /* Styles applied to the container element if `actionPosition="left"`. */
     titleWrapActionPosLeft: {
       marginLeft: 0
     },
+
+    /* Styles applied to the container element if `actionPosition="right"`. */
     titleWrapActionPosRight: {
       marginRight: 0
     },
+
+    /* Styles applied to the title container element. */
     title: {
       fontSize: theme.typography.pxToRem(16),
       lineHeight: '24px',
@@ -9383,6 +9762,8 @@ var styles = function styles(theme) {
       overflow: 'hidden',
       whiteSpace: 'nowrap'
     },
+
+    /* Styles applied to the subtitle container element. */
     subtitle: {
       fontSize: theme.typography.pxToRem(12),
       lineHeight: 1,
@@ -9390,7 +9771,11 @@ var styles = function styles(theme) {
       overflow: 'hidden',
       whiteSpace: 'nowrap'
     },
+
+    /* Styles applied to the actionIcon if supplied. */
     actionIcon: {},
+
+    /* Styles applied to the actionIcon if `actionPosition="left". */
     actionIconActionPosLeft: {
       order: -1
     }
@@ -9557,7 +9942,8 @@ var styles = {
   },
   entered: {
     opacity: 1,
-    transform: getScale(1)
+    // Use translateZ to scrolling issue on Chrome.
+    transform: "".concat(getScale(1), " translateZ(0)")
   }
 };
 /**
@@ -10328,6 +10714,7 @@ var _helpers = __webpack_require__(/*! ../utils/helpers */ "./node_modules/@mate
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       userSelect: 'none',
       fontSize: 24,
@@ -10338,18 +10725,28 @@ var styles = function styles(theme) {
       overflow: 'hidden',
       flexShrink: 0
     },
+
+    /* Styles applied to the root element if `color="primary"`. */
     colorPrimary: {
       color: theme.palette.primary.main
     },
+
+    /* Styles applied to the root element if `color="secondary"`. */
     colorSecondary: {
       color: theme.palette.secondary.main
     },
+
+    /* Styles applied to the root element if `color="action"`. */
     colorAction: {
       color: theme.palette.action.active
     },
+
+    /* Styles applied to the root element if `color="error"`. */
     colorError: {
       color: theme.palette.error.main
     },
+
+    /* Styles applied to the root element if `color="disabled"`. */
     colorDisabled: {
       color: theme.palette.action.disabled
     },
@@ -10483,6 +10880,7 @@ var _helpers = __webpack_require__(/*! ../utils/helpers */ "./node_modules/@mate
 // @inheritedComponent ButtonBase
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       textAlign: 'center',
       flex: '0 0 auto',
@@ -10509,9 +10907,13 @@ var styles = function styles(theme) {
         color: theme.palette.action.disabled
       }
     },
+
+    /* Styles applied to the root element if `color="inherit"`. */
     colorInherit: {
       color: 'inherit'
     },
+
+    /* Styles applied to the root element if `color="primary"`. */
     colorPrimary: {
       color: theme.palette.primary.main,
       '&:hover': {
@@ -10522,6 +10924,8 @@ var styles = function styles(theme) {
         }
       }
     },
+
+    /* Styles applied to the root element if `color="secondary"`. */
     colorSecondary: {
       color: theme.palette.secondary.main,
       '&:hover': {
@@ -10532,7 +10936,11 @@ var styles = function styles(theme) {
         }
       }
     },
+
+    /* Styles applied to the root element if `disabled={true}`. */
     disabled: {},
+
+    /* Styles applied to the children container element. */
     label: {
       width: '100%',
       display: 'flex',
@@ -10734,6 +11142,7 @@ var styles = function styles(theme) {
   };
   var bottomLineColor = light ? 'rgba(0, 0, 0, 0.42)' : 'rgba(255, 255, 255, 0.7)';
   return {
+    /* Styles applied to the root element. */
     root: {
       // Mimics the default input display property used by browsers for an input.
       display: 'inline-flex',
@@ -10747,13 +11156,21 @@ var styles = function styles(theme) {
         color: theme.palette.text.disabled
       }
     },
+
+    /* Styles applied to the root element if the component is a descendant of `FormControl`. */
     formControl: {
       'label + &': {
         marginTop: 16
       }
     },
+
+    /* Styles applied to the root element if the component is focused. */
     focused: {},
+
+    /* Styles applied to the root element if `disabled={true}`. */
     disabled: {},
+
+    /* Styles applied to the root element if `disabledUnderline={false}`. */
     underline: {
       '&:after': {
         borderBottom: "2px solid ".concat(theme.palette.primary[light ? 'dark' : 'light']),
@@ -10800,13 +11217,21 @@ var styles = function styles(theme) {
         borderBottom: "1px dotted ".concat(bottomLineColor)
       }
     },
+
+    /* Styles applied to the root element if `error={true}`. */
     error: {},
+
+    /* Styles applied to the root element if `multiline={true}`. */
     multiline: {
       padding: "".concat(8 - 2, "px 0 ").concat(8 - 1, "px")
     },
+
+    /* Styles applied to the root element if `fullWidth={true}`. */
     fullWidth: {
       width: '100%'
     },
+
+    /* Styles applied to the `input` element. */
     input: {
       font: 'inherit',
       color: 'currentColor',
@@ -10863,18 +11288,26 @@ var styles = function styles(theme) {
 
       }
     },
+
+    /* Styles applied to the `input` element if `margin="dense"`. */
     inputMarginDense: {
       paddingTop: 4 - 1
     },
+
+    /* Styles applied to the `input` element if `multiline={true}`. */
     inputMultiline: {
       resize: 'none',
       padding: 0
     },
+
+    /* Styles applied to the `input` element if `type` is not "text"`. */
     inputType: {
       // type="date" or type="time", etc. have specific styles we need to reset.
       height: '1.1875em' // Reset (19px), match the native input line-height
 
     },
+
+    /* Styles applied to the `input` element if `type="search"`. */
     inputTypeSearch: {
       // Improve type search style.
       '-moz-appearance': 'textfield',
@@ -10889,6 +11322,7 @@ function formControlState(props, context) {
   var disabled = props.disabled;
   var error = props.error;
   var margin = props.margin;
+  var required = props.required;
 
   if (context && context.muiFormControl) {
     if (typeof disabled === 'undefined') {
@@ -10902,12 +11336,17 @@ function formControlState(props, context) {
     if (typeof margin === 'undefined') {
       margin = context.muiFormControl.margin;
     }
+
+    if (typeof required === 'undefined') {
+      required = context.muiFormControl.required;
+    }
   }
 
   return {
     disabled: disabled,
     error: error,
-    margin: margin
+    margin: margin,
+    required: required
   };
 }
 
@@ -10969,7 +11408,7 @@ function (_React$Component) {
 
     _this.handleChange = function (event) {
       if (!_this.isControlled) {
-        _this.checkDirty(_this.input);
+        _this.checkDirty(_this.inputRef);
       } // Perform in the willUpdate
 
 
@@ -10978,21 +11417,21 @@ function (_React$Component) {
       }
     };
 
-    _this.handleRefInput = function (node) {
-      _this.input = node;
-      var ref;
+    _this.handleRefInput = function (ref) {
+      _this.inputRef = ref;
+      var refProp;
 
       if (_this.props.inputRef) {
-        ref = _this.props.inputRef;
+        refProp = _this.props.inputRef;
       } else if (_this.props.inputProps && _this.props.inputProps.ref) {
-        ref = _this.props.inputProps.ref;
+        refProp = _this.props.inputProps.ref;
       }
 
-      if (ref) {
-        if (typeof ref === 'function') {
-          ref(node);
+      if (refProp) {
+        if (typeof refProp === 'function') {
+          refProp(ref);
         } else {
-          ref.current = node;
+          refProp.current = ref;
         }
       }
     };
@@ -11049,7 +11488,7 @@ function (_React$Component) {
     key: "componentDidMount",
     value: function componentDidMount() {
       if (!this.isControlled) {
-        this.checkDirty(this.input);
+        this.checkDirty(this.inputRef);
       }
     }
   }, {
@@ -11131,11 +11570,11 @@ function (_React$Component) {
       var _formControlState = formControlState(this.props, this.context),
           disabled = _formControlState.disabled,
           error = _formControlState.error,
-          margin = _formControlState.margin;
+          margin = _formControlState.margin,
+          required = _formControlState.required;
 
       var className = (0, _classnames.default)(classes.root, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.disabled, disabled), (0, _defineProperty2.default)(_classNames, classes.error, error), (0, _defineProperty2.default)(_classNames, classes.fullWidth, fullWidth), (0, _defineProperty2.default)(_classNames, classes.focused, this.state.focused), (0, _defineProperty2.default)(_classNames, classes.formControl, muiFormControl), (0, _defineProperty2.default)(_classNames, classes.multiline, multiline), (0, _defineProperty2.default)(_classNames, classes.underline, !disableUnderline), _classNames), classNameProp);
       var inputClassName = (0, _classnames.default)(classes.input, (_classNames2 = {}, (0, _defineProperty2.default)(_classNames2, classes.disabled, disabled), (0, _defineProperty2.default)(_classNames2, classes.inputType, type !== 'text'), (0, _defineProperty2.default)(_classNames2, classes.inputTypeSearch, type === 'search'), (0, _defineProperty2.default)(_classNames2, classes.inputMultiline, multiline), (0, _defineProperty2.default)(_classNames2, classes.inputMarginDense, margin === 'dense'), _classNames2), inputPropsClassName);
-      var required = muiFormControl && muiFormControl.required === true;
       var InputComponent = 'input';
       var inputProps = (0, _objectSpread2.default)({}, inputPropsProp, {
         ref: this.handleRefInput
@@ -11182,7 +11621,7 @@ function (_React$Component) {
         onKeyUp: onKeyUp,
         placeholder: placeholder,
         readOnly: readOnly,
-        required: required ? true : undefined,
+        required: required,
         rows: rows,
         type: type,
         value: value
@@ -11329,9 +11768,15 @@ Input.propTypes =  true ? {
   placeholder: _propTypes.default.string,
 
   /**
-   * @ignore
+   * It prevents the user from changing the value of the field
+   * (not from interacting with the field).
    */
   readOnly: _propTypes.default.bool,
+
+  /**
+   * If `true`, the input will be required.
+   */
+  required: _propTypes.default.bool,
 
   /**
    * Number of rows to display when multiline option is set to true.
@@ -11424,6 +11869,7 @@ var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withS
 // < 1kb payload overhead when lodash/debounce is > 3kb.
 var ROWS_HEIGHT = 19;
 var styles = {
+  /* Styles applied to the root element. */
   root: {
     position: 'relative',
     // because the shadow has position: 'absolute',
@@ -11443,7 +11889,6 @@ var styles = {
     background: 'transparent'
   },
   shadow: {
-    resize: 'none',
     // Overflow also needed to here to remove the extra row
     // added to textareas in Firefox.
     overflow: 'hidden',
@@ -11473,9 +11918,10 @@ function (_React$Component) {
     _this = (0, _possibleConstructorReturn2.default)(this, (Textarea.__proto__ || Object.getPrototypeOf(Textarea)).call(this, props)); // <Input> expects the components it renders to respond to 'value'
     // so that it can check whether they are filled.
 
-    _this.shadow = null;
-    _this.singlelineShadow = null;
-    _this.input = null;
+    _this.isControlled = _this.props.value != null;
+    _this.shadowRef = null;
+    _this.singlelineShadowRef = null;
+    _this.inputRef = null;
     _this.value = null;
     _this.handleResize = (0, _debounce.default)(function () {
       _this.syncHeightWithShadow();
@@ -11484,33 +11930,33 @@ function (_React$Component) {
       height: null
     };
 
-    _this.handleRefInput = function (node) {
-      _this.input = node;
+    _this.handleRefInput = function (ref) {
+      _this.inputRef = ref;
       var textareaRef = _this.props.textareaRef;
 
       if (textareaRef) {
         if (typeof textareaRef === 'function') {
-          textareaRef(node);
+          textareaRef(ref);
         } else {
-          textareaRef.current = node;
+          textareaRef.current = ref;
         }
       }
     };
 
-    _this.handleRefSinglelineShadow = function (node) {
-      _this.singlelineShadow = node;
+    _this.handleRefSinglelineShadow = function (ref) {
+      _this.singlelineShadowRef = ref;
     };
 
-    _this.handleRefShadow = function (node) {
-      _this.shadow = node;
+    _this.handleRefShadow = function (ref) {
+      _this.shadowRef = ref;
     };
 
     _this.handleChange = function (event) {
       _this.value = event.target.value;
 
-      if (typeof _this.props.value === 'undefined' && _this.shadow) {
+      if (!_this.isControlled) {
         // The component is not controlled, we need to update the shallow value.
-        _this.shadow.value = _this.value;
+        _this.shadowRef.value = _this.value;
 
         _this.syncHeightWithShadow();
       }
@@ -11547,17 +11993,13 @@ function (_React$Component) {
     value: function syncHeightWithShadow() {
       var props = this.props;
 
-      if (!this.shadow || !this.singlelineShadow) {
-        return;
-      } // The component is controlled, we need to update the shallow value.
-
-
-      if (typeof props.value !== 'undefined') {
-        this.shadow.value = props.value == null ? '' : String(props.value);
+      if (this.isControlled) {
+        // The component is controlled, we need to update the shallow value.
+        this.shadowRef.value = props.value == null ? '' : String(props.value);
       }
 
-      var lineHeight = this.singlelineShadow.scrollHeight;
-      var newHeight = this.shadow.scrollHeight; // Guarding for jsdom, where scrollHeight isn't present.
+      var lineHeight = this.singlelineShadowRef.scrollHeight;
+      var newHeight = this.shadowRef.scrollHeight; // Guarding for jsdom, where scrollHeight isn't present.
       // See https://github.com/tmpvar/jsdom/issues/1013
 
       if (newHeight === undefined) {
@@ -11599,21 +12041,21 @@ function (_React$Component) {
         target: "window",
         onResize: this.handleResize
       }), _react.default.createElement("textarea", {
-        ref: this.handleRefSinglelineShadow,
-        className: (0, _classnames.default)(classes.shadow, classes.textarea),
-        tabIndex: -1,
-        rows: "1",
-        readOnly: true,
         "aria-hidden": "true",
+        className: (0, _classnames.default)(classes.textarea, classes.shadow),
+        readOnly: true,
+        ref: this.handleRefSinglelineShadow,
+        rows: "1",
+        tabIndex: -1,
         value: ""
       }), _react.default.createElement("textarea", {
-        ref: this.handleRefShadow,
-        className: (0, _classnames.default)(classes.shadow, classes.textarea),
-        tabIndex: -1,
-        rows: rows,
         "aria-hidden": "true",
-        readOnly: true,
+        className: (0, _classnames.default)(classes.textarea, classes.shadow),
         defaultValue: defaultValue,
+        readOnly: true,
+        ref: this.handleRefShadow,
+        rows: rows,
+        tabIndex: -1,
         value: value
       }), _react.default.createElement("textarea", (0, _extends2.default)({
         rows: rows,
@@ -11745,14 +12187,19 @@ var _Typography = _interopRequireDefault(__webpack_require__(/*! ../Typography *
 var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/styles/withStyles.js"));
 
 var styles = {
+  /* Styles applied to the root element. */
   root: {
     display: 'flex',
     maxHeight: '2em',
     alignItems: 'center'
   },
+
+  /* Styles applied to the root element if `position="start"`. */
   positionStart: {
     marginRight: 8
   },
+
+  /* Styles applied to the root element if `position="end"`. */
   positionEnd: {
     marginLeft: 8
   }
@@ -11884,9 +12331,12 @@ var _FormLabel = _interopRequireDefault(__webpack_require__(/*! ../FormLabel */ 
 // @inheritedComponent FormLabel
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       transformOrigin: 'top left'
     },
+
+    /* Styles applied to the root element if the component is a descendant of `FormControl`. */
     formControl: {
       position: 'absolute',
       left: 0,
@@ -11894,14 +12344,20 @@ var styles = function styles(theme) {
       // slight alteration to spec spacing to match visual spec result
       transform: 'translate(0, 24px) scale(1)'
     },
+
+    /* Styles applied to the root element if `margin="dense"`. */
     marginDense: {
       // Compensation for the `Input.inputDense` style.
       transform: 'translate(0, 21px) scale(1)'
     },
+
+    /* Styles applied to the `input` element if `shrink={true}`. */
     shrink: {
       transform: 'translate(0, 1.5px) scale(0.75)',
       transformOrigin: 'top left'
     },
+
+    /* Styles applied to the `input` element if `disableAnimation={false}`. */
     animated: {
       transition: theme.transitions.create('transform', {
         duration: theme.transitions.duration.shorter,
@@ -12083,23 +12539,34 @@ var TRANSITION_DURATION = 4; // seconds
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       position: 'relative',
       overflow: 'hidden',
       height: 5
     },
+
+    /* Styles applied to the root & bar2 element if `color="primary"`; bar2 if `variant-"buffer"`. */
     colorPrimary: {
       backgroundColor: (0, _colorManipulator.lighten)(theme.palette.primary.light, 0.6)
     },
+
+    /* Styles applied to the root & bar2 elements if `color="secondary"`; bar2 if variant="buffer". */
     colorSecondary: {
       backgroundColor: (0, _colorManipulator.lighten)(theme.palette.secondary.light, 0.4)
     },
+
+    /* Styles applied to the root element if `variant="buffer"`. */
     buffer: {
       backgroundColor: 'transparent'
     },
+
+    /* Styles applied to the root element if `variant="query"`. */
     query: {
       transform: 'rotate(180deg)'
     },
+
+    /* Styles applied to the additional bar element if `variant="buffer"`. */
     dashed: {
       position: 'absolute',
       marginTop: 0,
@@ -12107,16 +12574,22 @@ var styles = function styles(theme) {
       width: '100%',
       animation: 'buffer 3s infinite linear'
     },
+
+    /* Styles applied to the additional bar element if `variant="buffer"` & `color="primary"`. */
     dashedColorPrimary: {
       backgroundImage: "radial-gradient(".concat((0, _colorManipulator.lighten)(theme.palette.primary.light, 0.6), " 0%, ").concat((0, _colorManipulator.lighten)(theme.palette.primary.light, 0.6), " 16%, transparent 42%)"),
       backgroundSize: '10px 10px',
       backgroundPosition: '0px -23px'
     },
+
+    /* Styles applied to the additional bar element if `variant="buffer"` & `color="secondary"`. */
     dashedColorSecondary: {
       backgroundImage: "radial-gradient(".concat((0, _colorManipulator.lighten)(theme.palette.secondary.light, 0.4), " 0%, ").concat((0, _colorManipulator.lighten)(theme.palette.secondary.light, 0.6), " 16%, transparent 42%)"),
       backgroundSize: '10px 10px',
       backgroundPosition: '0px -23px'
     },
+
+    /* Styles applied to the layered bar1 & bar2 elements. */
     bar: {
       width: '100%',
       position: 'absolute',
@@ -12126,31 +12599,48 @@ var styles = function styles(theme) {
       transition: 'transform 0.2s linear',
       transformOrigin: 'left'
     },
+
+    /* Styles applied to the bar elements if `color="primary"`; bar2 if `variant` not "buffer". */
     barColorPrimary: {
       backgroundColor: theme.palette.primary.main
     },
+
+    /* Styles applied to the bar elements if `color="secondary"`; bar2 if `variant` not "buffer". */
     barColorSecondary: {
       backgroundColor: theme.palette.secondary.main
     },
+
+    /* Styles applied to the bar1 element if `variant="indeterminate or query"`. */
     bar1Indeterminate: {
       width: 'auto',
       willChange: 'left, right',
       animation: 'mui-indeterminate1 2.1s cubic-bezier(0.65, 0.815, 0.735, 0.395) infinite'
     },
+
+    /* Styles applied to the bar1 element if `variant="determinate"`. */
+    bar1Determinate: {
+      willChange: 'transform',
+      transition: "transform .".concat(TRANSITION_DURATION, "s linear")
+    },
+
+    /* Styles applied to the bar1 element if `variant="buffer"`. */
+    bar1Buffer: {
+      zIndex: 1,
+      transition: "transform .".concat(TRANSITION_DURATION, "s linear")
+    },
+
+    /* Styles applied to the bar2 element if `variant="indeterminate or query"`. */
     bar2Indeterminate: {
       width: 'auto',
       willChange: 'left, right',
       animation: 'mui-indeterminate2 2.1s cubic-bezier(0.165, 0.84, 0.44, 1) infinite',
       animationDelay: '1.15s'
     },
-    bar1Determinate: {
-      willChange: 'transform',
-      transition: "transform .".concat(TRANSITION_DURATION, "s linear")
-    },
-    bar1Buffer: {
-      zIndex: 1,
-      transition: "transform .".concat(TRANSITION_DURATION, "s linear")
-    },
+
+    /* Styles applied to the bar2 element if `variant="determinate"`. */
+    bar2Determinate: {},
+
+    /* Styles applied to the bar2 element if `variant="buffer"`. */
     bar2Buffer: {
       transition: "transform .".concat(TRANSITION_DURATION, "s linear")
     },
@@ -12230,7 +12720,7 @@ function LinearProgress(props) {
   var className = (0, _classnames.default)(classes.root, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.colorPrimary, color === 'primary'), (0, _defineProperty2.default)(_classNames, classes.colorSecondary, color === 'secondary'), (0, _defineProperty2.default)(_classNames, classes.buffer, variant === 'buffer'), (0, _defineProperty2.default)(_classNames, classes.query, variant === 'query'), _classNames), classNameProp);
   var dashedClass = (0, _classnames.default)(classes.dashed, (_classNames2 = {}, (0, _defineProperty2.default)(_classNames2, classes.dashedColorPrimary, color === 'primary'), (0, _defineProperty2.default)(_classNames2, classes.dashedColorSecondary, color === 'secondary'), _classNames2));
   var bar1ClassName = (0, _classnames.default)(classes.bar, (_classNames3 = {}, (0, _defineProperty2.default)(_classNames3, classes.barColorPrimary, color === 'primary'), (0, _defineProperty2.default)(_classNames3, classes.barColorSecondary, color === 'secondary'), (0, _defineProperty2.default)(_classNames3, classes.bar1Indeterminate, variant === 'indeterminate' || variant === 'query'), (0, _defineProperty2.default)(_classNames3, classes.bar1Determinate, variant === 'determinate'), (0, _defineProperty2.default)(_classNames3, classes.bar1Buffer, variant === 'buffer'), _classNames3));
-  var bar2ClassName = (0, _classnames.default)(classes.bar, (_classNames4 = {}, (0, _defineProperty2.default)(_classNames4, classes.barColorPrimary, color === 'primary' && variant !== 'buffer'), (0, _defineProperty2.default)(_classNames4, classes.colorPrimary, color === 'primary' && variant === 'buffer'), (0, _defineProperty2.default)(_classNames4, classes.barColorSecondary, color === 'secondary' && variant !== 'buffer'), (0, _defineProperty2.default)(_classNames4, classes.colorSecondary, color === 'secondary' && variant === 'buffer'), (0, _defineProperty2.default)(_classNames4, classes.bar2Indeterminate, variant === 'indeterminate' || variant === 'query'), (0, _defineProperty2.default)(_classNames4, classes.bar2Buffer, variant === 'buffer'), _classNames4));
+  var bar2ClassName = (0, _classnames.default)(classes.bar, (_classNames4 = {}, (0, _defineProperty2.default)(_classNames4, classes.barColorPrimary, color === 'primary' && variant !== 'buffer'), (0, _defineProperty2.default)(_classNames4, classes.colorPrimary, color === 'primary' && variant === 'buffer'), (0, _defineProperty2.default)(_classNames4, classes.barColorSecondary, color === 'secondary' && variant !== 'buffer'), (0, _defineProperty2.default)(_classNames4, classes.colorSecondary, color === 'secondary' && variant === 'buffer'), (0, _defineProperty2.default)(_classNames4, classes.bar2Indeterminate, variant === 'indeterminate' || variant === 'query'), (0, _defineProperty2.default)(_classNames4, classes.bar1Determinate, variant === 'determinate'), (0, _defineProperty2.default)(_classNames4, classes.bar2Buffer, variant === 'buffer'), _classNames4));
   var rootProps = {};
   var inlineStyles = {
     bar1: {},
@@ -12382,20 +12872,27 @@ var _classnames = _interopRequireDefault(__webpack_require__(/*! classnames */ "
 var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/styles/withStyles.js"));
 
 var styles = {
+  /* Styles applied to the root element. */
   root: {
     listStyle: 'none',
     margin: 0,
     padding: 0,
     position: 'relative'
   },
+
+  /* Styles applied to the root element if `disablePddding={false}`. */
   padding: {
     paddingTop: 8,
     paddingBottom: 8
   },
+
+  /* Styles applied to the root element if `dense={true}` & `disablePddding={false}`. */
   dense: {
     paddingTop: 4,
     paddingBottom: 4
   },
+
+  /* Styles applied to the root element if a `subheader` is provided. */
   subheader: {
     paddingTop: 0
   }
@@ -12572,6 +13069,7 @@ var _reactHelpers = __webpack_require__(/*! ../utils/reactHelpers */ "./node_mod
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the (normally root) `component` element. May be wrapped by a `container`. */
     root: {
       display: 'flex',
       justifyContent: 'flex-start',
@@ -12580,30 +13078,46 @@ var styles = function styles(theme) {
       textDecoration: 'none',
       width: '100%',
       boxSizing: 'border-box',
-      textAlign: 'left'
-    },
-    container: {
-      position: 'relative'
-    },
-    focusVisible: {
-      backgroundColor: theme.palette.action.hover
-    },
-    default: {
+      textAlign: 'left',
       paddingTop: 12,
       paddingBottom: 12
     },
+
+    /* Styles applied to the `container` element if `children` includes `ListItemSecondaryAction`. */
+    container: {
+      position: 'relative'
+    },
+    // TODO: Sanity check this - why is focusVisibleClassName prop apparently applied to a div?
+
+    /* Styles applied to the `component`'s `focusVisibleClassName` property if `button={true}`. */
+    focusVisible: {
+      backgroundColor: theme.palette.action.hover
+    },
+
+    /* Legacy styles applied to the root element. Use `root` instead. */
+    default: {},
+
+    /* Styles applied to the `component` element if `dense={true}` or `children` includes `Avatar`. */
     dense: {
       paddingTop: 8,
       paddingBottom: 8
     },
+
+    /* Styles applied to the inner `component` element if `dense={true}`. */
     disabled: {
       opacity: 0.5
     },
+
+    /* Styles applied to the inner `component` element if `divider={true}`. */
     divider: {
       borderBottom: "1px solid ".concat(theme.palette.divider),
       backgroundClip: 'padding-box'
     },
+
+    /* Styles applied to the inner `component` element if `disableGutters={false}`. */
     gutters: theme.mixins.gutters(),
+
+    /* Styles applied to the inner `component` element if `button={true}`. */
     button: {
       transition: theme.transitions.create('background-color', {
         duration: theme.transitions.duration.shortest
@@ -12617,6 +13131,8 @@ var styles = function styles(theme) {
         }
       }
     },
+
+    /* Styles applied to the `component` element if `children` includes `ListItemSecondaryAction`. */
     secondaryAction: {
       // Add some space to avoid collision as `ListItemSecondaryAction`
       // is absolutely positionned.
@@ -12674,7 +13190,7 @@ function (_React$Component) {
         return (0, _reactHelpers.isMuiElement)(value, ['ListItemAvatar']);
       });
       var hasSecondaryAction = children.length && (0, _reactHelpers.isMuiElement)(children[children.length - 1], ['ListItemSecondaryAction']);
-      var className = (0, _classnames.default)(classes.root, isDense || hasAvatar ? classes.dense : classes.default, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.gutters, !disableGutters), (0, _defineProperty2.default)(_classNames, classes.divider, divider), (0, _defineProperty2.default)(_classNames, classes.disabled, disabled), (0, _defineProperty2.default)(_classNames, classes.button, button), (0, _defineProperty2.default)(_classNames, classes.secondaryAction, hasSecondaryAction), _classNames), classNameProp);
+      var className = (0, _classnames.default)(classes.root, classes.default, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.dense, isDense || hasAvatar), (0, _defineProperty2.default)(_classNames, classes.gutters, !disableGutters), (0, _defineProperty2.default)(_classNames, classes.divider, divider), (0, _defineProperty2.default)(_classNames, classes.disabled, disabled), (0, _defineProperty2.default)(_classNames, classes.button, button), (0, _defineProperty2.default)(_classNames, classes.secondaryAction, hasSecondaryAction), _classNames), classNameProp);
       var componentProps = (0, _objectSpread2.default)({
         className: className,
         disabled: disabled
@@ -12859,12 +13375,15 @@ var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withS
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       width: 36,
       height: 36,
       fontSize: theme.typography.pxToRem(18),
       marginRight: 4
     },
+
+    /* Styles applied to the children – typically the `Avatar` component. */
     icon: {
       width: 20,
       height: 20,
@@ -12873,7 +13392,7 @@ var styles = function styles(theme) {
   };
 };
 /**
- * It's a simple wrapper to apply the `dense` mode styles to `Avatar`.
+ * This is a simple wrapper to apply the `dense` mode styles to `Avatar`.
  */
 
 
@@ -12898,7 +13417,7 @@ function ListItemAvatar(props, context) {
 
 ListItemAvatar.propTypes =  true ? {
   /**
-   * The content of the component, normally `Avatar`.
+   * The content of the component – normally `Avatar`.
    */
   children: _propTypes.default.element.isRequired,
 
@@ -12983,6 +13502,7 @@ var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withS
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       marginRight: 16,
       color: theme.palette.action.active,
@@ -13090,6 +13610,7 @@ var _classnames = _interopRequireDefault(__webpack_require__(/*! classnames */ "
 var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/styles/withStyles.js"));
 
 var styles = {
+  /* Styles applied to the root element. */
   root: {
     position: 'absolute',
     right: 4,
@@ -13197,6 +13718,7 @@ var _Typography = _interopRequireDefault(__webpack_require__(/*! ../Typography *
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       flex: '1 1 auto',
       minWidth: 0,
@@ -13205,24 +13727,34 @@ var styles = function styles(theme) {
         paddingLeft: 0
       }
     },
+
+    /* Styles applied to the root element if `inset={true}`. */
     inset: {
       '&:first-child': {
         paddingLeft: 56
       }
     },
+
+    /* Styles applied to the root element if `context.dense` is `true`. */
     dense: {
       fontSize: theme.typography.pxToRem(13)
     },
+
+    /* Styles applied to the primary `Typography` component. */
     primary: {
       '&$textDense': {
         fontSize: 'inherit'
       }
     },
+
+    /* Styles applied to the secondary `Typography` component. */
     secondary: {
       '&$textDense': {
         fontSize: 'inherit'
       }
     },
+
+    /* Styles applied to the `Typography` components if `context.dense` is `true`. */
     textDense: {}
   };
 };
@@ -13398,6 +13930,7 @@ var _helpers = __webpack_require__(/*! ../utils/helpers */ "./node_modules/@mate
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: theme.mixins.gutters({
       boxSizing: 'border-box',
       lineHeight: '48px',
@@ -13407,15 +13940,23 @@ var styles = function styles(theme) {
       fontWeight: theme.typography.fontWeightMedium,
       fontSize: theme.typography.pxToRem(14)
     }),
+
+    /* Styles applied to the root element if `color="primary"`. */
     colorPrimary: {
       color: theme.palette.primary.main
     },
+
+    /* Styles applied to the root element if `color="inherit"`. */
     colorInherit: {
       color: 'inherit'
     },
+
+    /* Styles applied to the root element if `inset={true}`. */
     inset: {
       paddingLeft: 72
     },
+
+    /* Styles applied to the root element if `disableSticky={false}`. */
     sticky: {
       position: 'sticky',
       top: 0,
@@ -13577,15 +14118,14 @@ var LTR_ORIGIN = {
   horizontal: 'left'
 };
 var styles = {
+  /* Styles applied to the `Paper` component. */
   paper: {
     // specZ: The maximum height of a simple menu should be one or more rows less than the view
-    // height. This ensures a tappable area outside of the simple menu with which to dismiss
+    // height. This ensures a tapable area outside of the simple menu with which to dismiss
     // the menu.
     maxHeight: 'calc(100% - 96px)',
     // Add iOS momentum scrolling.
-    WebkitOverflowScrolling: 'touch',
-    // Fix a scrolling issue on Chrome.
-    transform: 'translateZ(0)'
+    WebkitOverflowScrolling: 'touch'
   }
 };
 exports.styles = styles;
@@ -13606,20 +14146,20 @@ function (_React$Component) {
       args[_key] = arguments[_key];
     }
 
-    return (0, _possibleConstructorReturn2.default)(_this, (_temp = _this = (0, _possibleConstructorReturn2.default)(this, (_ref = Menu.__proto__ || Object.getPrototypeOf(Menu)).call.apply(_ref, [this].concat(args))), _this.menuList = null, _this.getContentAnchorEl = function () {
-      if (!_this.menuList || !_this.menuList.selectedItem) {
-        return _reactDom.default.findDOMNode(_this.menuList).firstChild;
+    return (0, _possibleConstructorReturn2.default)(_this, (_temp = _this = (0, _possibleConstructorReturn2.default)(this, (_ref = Menu.__proto__ || Object.getPrototypeOf(Menu)).call.apply(_ref, [this].concat(args))), _this.menuListRef = null, _this.getContentAnchorEl = function () {
+      if (!_this.menuListRef || !_this.menuListRef.selectedItemRef) {
+        return _reactDom.default.findDOMNode(_this.menuListRef).firstChild;
       }
 
-      return _reactDom.default.findDOMNode(_this.menuList.selectedItem);
+      return _reactDom.default.findDOMNode(_this.menuListRef.selectedItemRef);
     }, _this.focus = function () {
-      if (_this.menuList && _this.menuList.selectedItem) {
-        _reactDom.default.findDOMNode(_this.menuList.selectedItem).focus();
+      if (_this.menuListRef && _this.menuListRef.selectedItemRef) {
+        _reactDom.default.findDOMNode(_this.menuListRef.selectedItemRef).focus();
 
         return;
       }
 
-      var menuList = _reactDom.default.findDOMNode(_this.menuList);
+      var menuList = _reactDom.default.findDOMNode(_this.menuListRef);
 
       if (menuList && menuList.firstChild) {
         menuList.firstChild.focus();
@@ -13629,7 +14169,7 @@ function (_React$Component) {
           disableAutoFocusItem = _this$props.disableAutoFocusItem,
           theme = _this$props.theme;
 
-      var menuList = _reactDom.default.findDOMNode(_this.menuList); // Focus so the scroll computation of the Popover works as expected.
+      var menuList = _reactDom.default.findDOMNode(_this.menuListRef); // Focus so the scroll computation of the Popover works as expected.
 
 
       if (disableAutoFocusItem !== true) {
@@ -13695,8 +14235,8 @@ function (_React$Component) {
       }, other), _react.default.createElement(_MenuList.default, (0, _extends2.default)({
         onKeyDown: this.handleListKeyDown
       }, MenuListProps, {
-        ref: function ref(node) {
-          _this2.menuList = node;
+        ref: function ref(_ref2) {
+          _this2.menuListRef = _ref2;
         }
       }), children));
     }
@@ -13874,6 +14414,7 @@ var _ListItem = _interopRequireDefault(__webpack_require__(/*! ../ListItem */ ".
 // @inheritedComponent ListItem
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: (0, _objectSpread2.default)({}, theme.typography.subheading, {
       height: 24,
       boxSizing: 'content-box',
@@ -13887,6 +14428,8 @@ var styles = function styles(theme) {
         backgroundColor: theme.palette.action.selected
       }
     }),
+
+    /* Styles applied to the root element if `selected={true}`. */
     selected: {}
   };
 };
@@ -14042,13 +14585,12 @@ function (_React$Component) {
       args[_key] = arguments[_key];
     }
 
-    return (0, _possibleConstructorReturn2.default)(_this, (_temp = _this = (0, _possibleConstructorReturn2.default)(this, (_ref = MenuList.__proto__ || Object.getPrototypeOf(MenuList)).call.apply(_ref, [this].concat(args))), _this.list = null, _this.selectedItem = null, _this.blurTimer = null, _this.state = {
+    return (0, _possibleConstructorReturn2.default)(_this, (_temp = _this = (0, _possibleConstructorReturn2.default)(this, (_ref = MenuList.__proto__ || Object.getPrototypeOf(MenuList)).call.apply(_ref, [this].concat(args))), _this.listRef = null, _this.selectedItemRef = null, _this.blurTimer = null, _this.state = {
       currentTabIndex: null
     }, _this.handleBlur = function (event) {
       _this.blurTimer = setTimeout(function () {
-        if (_this.list) {
-          var list = _reactDom.default.findDOMNode(_this.list);
-
+        if (_this.listRef) {
+          var list = _this.listRef;
           var currentFocus = (0, _ownerDocument.default)(list).activeElement;
 
           if (!list.contains(currentFocus)) {
@@ -14061,14 +14603,13 @@ function (_React$Component) {
         _this.props.onBlur(event);
       }
     }, _this.handleKeyDown = function (event) {
-      var list = _reactDom.default.findDOMNode(_this.list);
-
+      var list = _this.listRef;
       var key = (0, _keycode.default)(event);
       var currentFocus = (0, _ownerDocument.default)(list).activeElement;
 
       if ((key === 'up' || key === 'down') && (!currentFocus || currentFocus && !list.contains(currentFocus))) {
-        if (_this.selectedItem) {
-          _reactDom.default.findDOMNode(_this.selectedItem).focus();
+        if (_this.selectedItemRef) {
+          _this.selectedItemRef.focus();
         } else {
           list.firstChild.focus();
         }
@@ -14090,7 +14631,7 @@ function (_React$Component) {
         _this.props.onKeyDown(event, key);
       }
     }, _this.handleItemFocus = function (event) {
-      var list = _reactDom.default.findDOMNode(_this.list);
+      var list = _this.listRef;
 
       if (list) {
         for (var i = 0; i < list.children.length; i += 1) {
@@ -14125,8 +14666,7 @@ function (_React$Component) {
     key: "focus",
     value: function focus() {
       var currentTabIndex = this.state.currentTabIndex;
-
-      var list = _reactDom.default.findDOMNode(this.list);
+      var list = this.listRef;
 
       if (!list || !list.children || !list.firstChild) {
         return;
@@ -14141,8 +14681,7 @@ function (_React$Component) {
   }, {
     key: "resetTabIndex",
     value: function resetTabIndex() {
-      var list = _reactDom.default.findDOMNode(this.list);
-
+      var list = this.listRef;
       var currentFocus = (0, _ownerDocument.default)(list).activeElement;
       var items = [];
 
@@ -14156,8 +14695,8 @@ function (_React$Component) {
         return this.setTabIndex(currentFocusIndex);
       }
 
-      if (this.selectedItem) {
-        return this.setTabIndex(items.indexOf(_reactDom.default.findDOMNode(this.selectedItem)));
+      if (this.selectedItemRef) {
+        return this.setTabIndex(items.indexOf(this.selectedItemRef));
       }
 
       return this.setTabIndex(0);
@@ -14175,8 +14714,8 @@ function (_React$Component) {
           other = (0, _objectWithoutProperties2.default)(_props, ["children", "className", "onBlur", "onKeyDown"]);
       return _react.default.createElement(_List.default, (0, _extends2.default)({
         role: "menu",
-        ref: function ref(node) {
-          _this2.list = node;
+        ref: function ref(_ref2) {
+          _this2.listRef = _reactDom.default.findDOMNode(_ref2);
         },
         className: className,
         onKeyDown: this.handleKeyDown,
@@ -14189,8 +14728,8 @@ function (_React$Component) {
          true ? (0, _warning.default)(child.type !== _react.default.Fragment, ["Material-UI: the MenuList component doesn't accept a Fragment as a child.", 'Consider providing an array instead.'].join('\n')) : undefined;
         return _react.default.cloneElement(child, {
           tabIndex: index === _this2.state.currentTabIndex ? 0 : -1,
-          ref: child.props.selected ? function (node) {
-            _this2.selectedItem = node;
+          ref: child.props.selected ? function (ref) {
+            _this2.selectedItemRef = _reactDom.default.findDOMNode(ref);
           } : undefined,
           onFocus: _this2.handleItemFocus
         });
@@ -14294,6 +14833,7 @@ var _LinearProgress = _interopRequireDefault(__webpack_require__(/*! ../LinearPr
 // @inheritedComponent Paper
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       display: 'flex',
       flexDirection: 'row',
@@ -14302,6 +14842,8 @@ var styles = function styles(theme) {
       background: theme.palette.background.default,
       padding: 8
     },
+
+    /* Styles applied to the root element if `position="bottom"`. */
     positionBottom: {
       position: 'fixed',
       bottom: 0,
@@ -14309,6 +14851,8 @@ var styles = function styles(theme) {
       right: 0,
       zIndex: theme.zIndex.mobileStepper
     },
+
+    /* Styles applied to the root element if `position="top"`. */
     positionTop: {
       position: 'fixed',
       top: 0,
@@ -14316,11 +14860,17 @@ var styles = function styles(theme) {
       right: 0,
       zIndex: theme.zIndex.mobileStepper
     },
+
+    /* Styles applied to the root element if `position="static"`. */
     positionStatic: {},
+
+    /* Styles applied to the dots container if `variant="dots"`. */
     dots: {
       display: 'flex',
       flexDirection: 'row'
     },
+
+    /* Styles applied to each dot if `variant="dots"`. */
     dot: {
       backgroundColor: theme.palette.action.disabled,
       borderRadius: '50%',
@@ -14328,9 +14878,13 @@ var styles = function styles(theme) {
       height: 8,
       margin: '0 2px'
     },
+
+    /* Styles applied to a dot if `variant="dots"` and this is the active step. */
     dotActive: {
       backgroundColor: theme.palette.primary.main
     },
+
+    /* Styles applied to the Linear Progress component if `variant="progress"`. */
     progress: {
       width: '50%'
     }
@@ -14523,6 +15077,7 @@ function getHasTransition(props) {
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       position: 'fixed',
       zIndex: theme.zIndex.modal,
@@ -14531,6 +15086,8 @@ var styles = function styles(theme) {
       top: 0,
       left: 0
     },
+
+    /* Styles applied to the root element if the `Modal` has exited. */
     hidden: {
       visibility: 'hidden'
     }
@@ -14619,6 +15176,11 @@ function (_React$Component) {
 
     _this.handleDocumentKeyDown = function (event) {
       if (!_this.isTopModal() || (0, _keycode.default)(event) !== 'esc') {
+        return;
+      } // Ignore events that have been `event.preventDefault()` marked.
+
+
+      if (event.defaultPrevented) {
         return;
       }
 
@@ -14777,23 +15339,23 @@ function (_React$Component) {
       }
 
       return _react.default.createElement(_Portal.default, {
-        ref: function ref(node) {
-          _this2.mountNode = node ? node.getMountNode() : node;
+        ref: function ref(_ref2) {
+          _this2.mountNode = _ref2 ? _ref2.getMountNode() : _ref2;
         },
         container: container,
         disablePortal: disablePortal,
         onRendered: this.handleRendered
       }, _react.default.createElement("div", (0, _extends2.default)({
-        ref: function ref(node) {
-          _this2.modalRef = node;
+        ref: function ref(_ref) {
+          _this2.modalRef = _ref;
         },
         className: (0, _classnames.default)(classes.root, className, (0, _defineProperty2.default)({}, classes.hidden, exited))
       }, other), hideBackdrop ? null : _react.default.createElement(BackdropComponent, (0, _extends2.default)({
         open: open,
         onClick: this.handleBackdropClick
       }, BackdropProps)), _react.default.createElement(_RootRef.default, {
-        rootRef: function rootRef(node) {
-          _this2.dialogRef = node;
+        rootRef: function rootRef(ref) {
+          _this2.dialogRef = ref;
         }
       }, _react.default.cloneElement(children, childProps))));
     }
@@ -15343,10 +15905,13 @@ var _Input = _interopRequireDefault(__webpack_require__(/*! ../Input */ "./node_
 // @inheritedComponent Input
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the `Input` component `root` class. */
     root: {
       position: 'relative',
       width: '100%'
     },
+
+    /* Styles applied to the `Input` component `select` class. */
     select: {
       '-moz-appearance': 'none',
       // Reset
@@ -15379,6 +15944,8 @@ var styles = function styles(theme) {
         cursor: 'default'
       }
     },
+
+    /* Styles applied to the `Input` component `selectMenu` class. */
     selectMenu: {
       width: 'auto',
       // Fix Safari textOverflow
@@ -15388,7 +15955,11 @@ var styles = function styles(theme) {
       minHeight: '1.1875em' // Reset (19px), match the native input line-height
 
     },
+
+    /* Styles applied to the `Input` component `disabled` class. */
     disabled: {},
+
+    /* Styles applied to the `Input` component `icon` class. */
     icon: {
       // We use a position absolute over a flexbox in order to forward the pointer events
       // to the input.
@@ -15666,9 +16237,12 @@ var styles = function styles(theme) {
     };
   });
   return (0, _objectSpread2.default)({
+    /* Styles applied to the root element. */
     root: {
       backgroundColor: theme.palette.background.paper
     },
+
+    /* Styles applied to the root element if `square={false}`. */
     rounded: {
       borderRadius: theme.shape.borderRadius
     }
@@ -15872,6 +16446,7 @@ function getAnchorEl(anchorEl) {
 }
 
 var styles = {
+  /* Styles applied to the `Paper` component. */
   paper: {
     position: 'absolute',
     overflowY: 'auto',
@@ -15905,9 +16480,7 @@ function (_React$Component) {
     }
 
     return (0, _possibleConstructorReturn2.default)(_this, (_temp = _this = (0, _possibleConstructorReturn2.default)(this, (_ref = Popover.__proto__ || Object.getPrototypeOf(Popover)).call.apply(_ref, [this].concat(args))), _this.paperRef = null, _this.handleGetOffsetTop = getOffsetTop, _this.handleGetOffsetLeft = getOffsetLeft, _this.handleResize = (0, _debounce.default)(function () {
-      var element = _reactDom.default.findDOMNode(_this.paperRef);
-
-      _this.setPositioningStyles(element);
+      _this.setPositioningStyles(_this.paperRef);
     }, 166), _this.componentWillUnmount = function () {
       _this.handleResize.clear();
     }, _this.setPositioningStyles = function (element) {
@@ -16027,7 +16600,7 @@ function (_React$Component) {
       } // If an anchor element wasn't provided, just use the parent body element of this Popover
 
 
-      var anchorElement = getAnchorEl(anchorEl) || (0, _ownerDocument.default)(_reactDom.default.findDOMNode(this.paperRef)).body;
+      var anchorElement = getAnchorEl(anchorEl) || (0, _ownerDocument.default)(this.paperRef).body;
       var anchorRect = anchorElement.getBoundingClientRect();
       var anchorVertical = contentAnchorOffset === 0 ? anchorOrigin.vertical : 'center';
       return {
@@ -16131,8 +16704,8 @@ function (_React$Component) {
       }, TransitionProps), _react.default.createElement(_Paper.default, (0, _extends2.default)({
         className: classes.paper,
         elevation: elevation,
-        ref: function ref(node) {
-          _this2.paperRef = node;
+        ref: function ref(_ref2) {
+          _this2.paperRef = _reactDom.default.findDOMNode(_ref2);
         }
       }, PaperProps), _react.default.createElement(_reactEventListener.default, {
         target: "window",
@@ -16451,7 +17024,7 @@ function (_React$Component) {
     _this = (0, _possibleConstructorReturn2.default)(this, (Popper.__proto__ || Object.getPrototypeOf(Popper)).call(this, props));
     _this.popper = null;
 
-    _this.handleRendered = function () {
+    _this.handleOpen = function () {
       var _this$props = _this.props,
           anchorEl = _this$props.anchorEl,
           modifiers = _this$props.modifiers,
@@ -16464,14 +17037,14 @@ function (_React$Component) {
 
       var popperNode = _reactDom.default.findDOMNode((0, _assertThisInitialized2.default)(_this));
 
+      if (!popperNode || !anchorEl || !open) {
+        return;
+      }
+
       if (_this.popper) {
         _this.popper.destroy();
 
         _this.popper = null;
-      }
-
-      if (!popperNode || !anchorEl || !open) {
-        return;
       }
 
       _this.popper = new _popper.default(getAnchorEl(anchorEl), popperNode, (0, _objectSpread2.default)({
@@ -16480,7 +17053,7 @@ function (_React$Component) {
         modifiers: (0, _objectSpread2.default)({}, disablePortal ? {} : {
           // It's using scrollParent by default, we can use the viewport when using a portal.
           preventOverflow: {
-            boundariesElement: 'viewport'
+            boundariesElement: 'window'
           }
         }, modifiers, popperOptions.modifiers),
         // We could have been using a custom modifier like react-popper is doing.
@@ -16525,14 +17098,14 @@ function (_React$Component) {
   (0, _createClass2.default)(Popper, [{
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps) {
-      if (prevProps.open && !this.props.open && !this.props.transition) {
+      if (prevProps.open !== this.props.open && !this.props.open && !this.props.transition) {
         // Otherwise handleExited will call this.
         this.handleClose();
       } // Let's update the popper position.
 
 
-      if (prevProps.anchorEl !== this.props.anchorEl || prevProps.popperOptions !== this.props.popperOptions || prevProps.modifiers !== this.props.modifiers || prevProps.disablePortal !== this.props.disablePortal || prevProps.placement !== this.props.placement) {
-        this.handleRendered();
+      if (prevProps.open !== this.props.open || prevProps.anchorEl !== this.props.anchorEl || prevProps.popperOptions !== this.props.popperOptions || prevProps.modifiers !== this.props.modifiers || prevProps.disablePortal !== this.props.disablePortal || prevProps.placement !== this.props.placement) {
+        this.handleOpen();
       }
     }
   }, {
@@ -16575,7 +17148,7 @@ function (_React$Component) {
       }
 
       return _react.default.createElement(_Portal.default, {
-        onRendered: this.handleRendered,
+        onRendered: this.handleOpen,
         disablePortal: disablePortal,
         container: container
       }, _react.default.createElement("div", (0, _extends2.default)({
@@ -16612,6 +17185,8 @@ Popper.propTypes =  true ? {
   /**
    * This is the DOM element, or a function that returns the DOM element,
    * that may be used to set the position of the popover.
+   * The return value will passed as the reference object of the Popper
+   * instance.
    */
   anchorEl: _propTypes.default.oneOfType([_propTypes.default.object, _propTypes.default.func]),
 
@@ -16940,11 +17515,18 @@ var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withS
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       color: theme.palette.text.secondary
     },
+
+    /* Styles applied to the root element if `checked={true}`. */
     checked: {},
+
+    /* Styles applied to the root element if `disabled={true}`. */
     disabled: {},
+
+    /* Styles applied to the root element if `color="primary"`. */
     colorPrimary: {
       '&$checked': {
         color: theme.palette.primary.main
@@ -16953,6 +17535,8 @@ var styles = function styles(theme) {
         color: theme.palette.action.disabled
       }
     },
+
+    /* Styles applied to the root element if `color="secondary"`. */
     colorSecondary: {
       '&$checked': {
         color: theme.palette.secondary.main
@@ -17665,13 +18249,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.default = void 0;
 
+var _objectSpread2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/builtin/objectSpread */ "./node_modules/@babel/runtime/helpers/builtin/objectSpread.js"));
+
 var _extends2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/builtin/extends */ "./node_modules/@babel/runtime/helpers/builtin/extends.js"));
 
 var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/builtin/defineProperty */ "./node_modules/@babel/runtime/helpers/builtin/defineProperty.js"));
 
 var _objectWithoutProperties2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/builtin/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/builtin/objectWithoutProperties.js"));
-
-var _objectSpread2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/builtin/objectSpread */ "./node_modules/@babel/runtime/helpers/builtin/objectSpread.js"));
 
 var _toConsumableArray2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/builtin/toConsumableArray */ "./node_modules/@babel/runtime/helpers/builtin/toConsumableArray.js"));
 
@@ -17716,7 +18300,7 @@ function (_React$Component) {
       args[_key] = arguments[_key];
     }
 
-    return (0, _possibleConstructorReturn2.default)(_this, (_temp = _this = (0, _possibleConstructorReturn2.default)(this, (_ref = SelectInput.__proto__ || Object.getPrototypeOf(SelectInput)).call.apply(_ref, [this].concat(args))), _this.ignoreNextBlur = false, _this.displayNode = null, _this.isOpenControlled = _this.props.open !== undefined, _this.state = {
+    return (0, _possibleConstructorReturn2.default)(_this, (_temp = _this = (0, _possibleConstructorReturn2.default)(this, (_ref = SelectInput.__proto__ || Object.getPrototypeOf(SelectInput)).call.apply(_ref, [this].concat(args))), _this.ignoreNextBlur = false, _this.displayRef = null, _this.isOpenControlled = _this.props.open !== undefined, _this.state = {
       menuMinWidth: null,
       open: false
     }, _this.update = function (_ref2) {
@@ -17735,7 +18319,7 @@ function (_React$Component) {
 
       _this.setState({
         // Perfom the layout computation outside of the render method.
-        menuMinWidth: _this.props.autoWidth ? null : _this.displayNode.clientWidth,
+        menuMinWidth: _this.props.autoWidth ? null : _this.displayRef.clientWidth,
         open: open
       });
     }, _this.handleClick = function (event) {
@@ -17766,11 +18350,6 @@ function (_React$Component) {
 
         if (onChange) {
           var value;
-          var target;
-
-          if (event.target) {
-            target = event.target;
-          }
 
           if (_this.props.multiple) {
             value = Array.isArray(_this.props.value) ? (0, _toConsumableArray2.default)(_this.props.value) : [];
@@ -17786,10 +18365,10 @@ function (_React$Component) {
           }
 
           event.persist();
-          event.target = (0, _objectSpread2.default)({}, target, {
+          event.target = {
             value: value,
             name: name
-          });
+          };
           onChange(event, child);
         }
       };
@@ -17819,9 +18398,9 @@ function (_React$Component) {
           event: event
         });
       }
-    }, _this.handleDisplayRef = function (node) {
-      _this.displayNode = node;
-    }, _this.handleInputRef = function (node) {
+    }, _this.handleDisplayRef = function (ref) {
+      _this.displayRef = ref;
+    }, _this.handleInputRef = function (ref) {
       var inputRef = _this.props.inputRef;
 
       if (!inputRef) {
@@ -17829,7 +18408,7 @@ function (_React$Component) {
       }
 
       var nodeProxy = {
-        node: node,
+        node: ref,
         // By pass the native input as we expose a rich object (array).
         value: _this.props.value
       };
@@ -17848,13 +18427,13 @@ function (_React$Component) {
       if (this.isOpenControlled && this.props.open) {
         // Focus the display node so the focus is restored on this element once
         // the menu is closed.
-        this.displayNode.focus(); // Rerender with the resolve `displayNode` reference.
+        this.displayRef.focus(); // Rerender with the resolve `displayRef` reference.
 
         this.forceUpdate();
       }
 
       if (this.props.autoFocus) {
-        this.displayNode.focus();
+        this.displayRef.focus();
       }
     }
   }, {
@@ -17890,7 +18469,7 @@ function (_React$Component) {
           type = _props$type === void 0 ? 'hidden' : _props$type,
           value = _props.value,
           other = (0, _objectWithoutProperties2.default)(_props, ["autoWidth", "children", "classes", "className", "disabled", "displayEmpty", "IconComponent", "inputRef", "MenuProps", "multiple", "name", "onBlur", "onChange", "onClose", "onFocus", "onOpen", "open", "readOnly", "renderValue", "required", "SelectDisplayProps", "tabIndex", "type", "value"]);
-      var open = this.isOpenControlled && this.displayNode ? openProp : this.state.open;
+      var open = this.isOpenControlled && this.displayRef ? openProp : this.state.open;
       delete other['aria-invalid'];
       var display;
       var displaySingle = '';
@@ -17949,8 +18528,8 @@ function (_React$Component) {
 
       var menuMinWidth = this.state.menuMinWidth;
 
-      if (!autoWidth && this.isOpenControlled && this.displayNode) {
-        menuMinWidth = this.displayNode.clientWidth;
+      if (!autoWidth && this.isOpenControlled && this.displayRef) {
+        menuMinWidth = this.displayRef.clientWidth;
       }
 
       var tabIndex;
@@ -17988,7 +18567,7 @@ function (_React$Component) {
         className: classes.icon
       }), _react.default.createElement(_Menu.default, (0, _extends2.default)({
         id: "menu-".concat(name || ''),
-        anchorEl: this.displayNode,
+        anchorEl: this.displayRef,
         open: open,
         onClose: this.handleClose
       }, MenuProps, {
@@ -18310,10 +18889,8 @@ function (_React$Component) {
         return;
       }
 
-      var node = _reactDom.default.findDOMNode(_this.transition);
-
-      if (node) {
-        setTranslateValue(_this.props, node);
+      if (_this.transitionRef) {
+        setTranslateValue(_this.props, _this.transitionRef);
       }
     }, 166), _this.handleEnter = function (node) {
       setTranslateValue(_this.props, node);
@@ -18397,11 +18974,9 @@ function (_React$Component) {
   }, {
     key: "updatePosition",
     value: function updatePosition() {
-      var node = _reactDom.default.findDOMNode(this.transition);
-
-      if (node) {
-        node.style.visibility = 'inherit';
-        setTranslateValue(this.props, node);
+      if (this.transitionRef) {
+        this.transitionRef.style.visibility = 'inherit';
+        setTranslateValue(this.props, this.transitionRef);
       }
     }
   }, {
@@ -18437,8 +19012,8 @@ function (_React$Component) {
         onExited: this.handleExited,
         appear: true,
         style: style,
-        ref: function ref(node) {
-          _this2.transition = node;
+        ref: function ref(_ref2) {
+          _this2.transitionRef = _reactDom.default.findDOMNode(_ref2);
         }
       }, other), children));
     }
@@ -18626,6 +19201,7 @@ var styles = function styles(theme) {
     transform: 'translateX(-50%)'
   };
   return {
+    /* Styles applied to the root element. */
     root: {
       zIndex: theme.zIndex.snackbar,
       position: 'fixed',
@@ -18635,17 +19211,29 @@ var styles = function styles(theme) {
       justifyContent: 'center',
       alignItems: 'center'
     },
+
+    /* Styles applied to the root element if `anchorOrigin={{ 'top', 'center' }}`. */
     anchorOriginTopCenter: (0, _objectSpread8.default)({}, top, (0, _defineProperty2.default)({}, theme.breakpoints.up('md'), (0, _objectSpread8.default)({}, center))),
+
+    /* Styles applied to the root element if `anchorOrigin={{ 'bottom', 'center' }}`. */
     anchorOriginBottomCenter: (0, _objectSpread8.default)({}, bottom, (0, _defineProperty2.default)({}, theme.breakpoints.up('md'), (0, _objectSpread8.default)({}, center))),
+
+    /* Styles applied to the root element if `anchorOrigin={{ 'top', 'right' }}`. */
     anchorOriginTopRight: (0, _objectSpread8.default)({}, top, right, (0, _defineProperty2.default)({}, theme.breakpoints.up('md'), (0, _objectSpread8.default)({
       left: 'auto'
     }, topSpace, rightSpace))),
+
+    /* Styles applied to the root element if `anchorOrigin={{ 'bottom', 'right' }}`. */
     anchorOriginBottomRight: (0, _objectSpread8.default)({}, bottom, right, (0, _defineProperty2.default)({}, theme.breakpoints.up('md'), (0, _objectSpread8.default)({
       left: 'auto'
     }, bottomSpace, rightSpace))),
+
+    /* Styles applied to the root element if `anchorOrigin={{ 'top', 'left' }}`. */
     anchorOriginTopLeft: (0, _objectSpread8.default)({}, top, left, (0, _defineProperty2.default)({}, theme.breakpoints.up('md'), (0, _objectSpread8.default)({
       right: 'auto'
     }, topSpace, leftSpace))),
+
+    /* Styles applied to the root element if `anchorOrigin={{ 'bottom', 'left' }}`. */
     anchorOriginBottomLeft: (0, _objectSpread8.default)({}, bottom, left, (0, _defineProperty2.default)({}, theme.breakpoints.up('md'), (0, _objectSpread8.default)({
       right: 'auto'
     }, bottomSpace, leftSpace)))
@@ -19077,6 +19665,7 @@ var styles = function styles(theme) {
   var emphasis = theme.palette.type === 'light' ? 0.8 : 0.98;
   var backgroundColor = (0, _colorManipulator.emphasize)(theme.palette.background.default, emphasis);
   return {
+    /* Styles applied to the root element. */
     root: (_root = {
       color: theme.palette.getContrastText(backgroundColor),
       backgroundColor: backgroundColor,
@@ -19091,9 +19680,13 @@ var styles = function styles(theme) {
     }), (0, _defineProperty2.default)(_root, theme.breakpoints.down('sm'), {
       flexGrow: 1
     }), _root),
+
+    /* Styles applied to the message wrapper element. */
     message: {
       padding: '8px 0'
     },
+
+    /* Styles applied to the action wrapper element if `action` is provided. */
     action: {
       display: 'flex',
       alignItems: 'center',
@@ -19221,7 +19814,10 @@ var _warning = _interopRequireDefault(__webpack_require__(/*! warning */ "./node
 var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/styles/withStyles.js"));
 
 var styles = {
+  /* Styles applied to the root element. */
   root: {},
+
+  /* Styles applied to the root element if `orientation="horizontal"`. */
   horizontal: {
     paddingLeft: 8,
     paddingRight: 8,
@@ -19232,7 +19828,11 @@ var styles = {
       paddingRight: 0
     }
   },
+
+  /* Styles applied to the root element if `orientation="vertical"`. */
   vertical: {},
+
+  /* Styles applied to the root element if `alternativeLabel={true}`. */
   alternativeLabel: {
     flex: 1,
     position: 'relative'
@@ -19397,8 +19997,6 @@ exports.default = exports.styles = void 0;
 
 var _extends2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/builtin/extends */ "./node_modules/@babel/runtime/helpers/builtin/extends.js"));
 
-var _defineProperty2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/builtin/defineProperty */ "./node_modules/@babel/runtime/helpers/builtin/defineProperty.js"));
-
 var _objectWithoutProperties2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/builtin/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/builtin/objectWithoutProperties.js"));
 
 var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
@@ -19417,15 +20015,23 @@ var _reactHelpers = __webpack_require__(/*! ../utils/reactHelpers */ "./node_mod
 
 // @inheritedComponent ButtonBase
 var styles = {
+  /* Styles applied to the root element. */
   root: {
     width: '100%',
     padding: '24px 16px',
     margin: '-24px -16px',
     boxSizing: 'content-box'
   },
+
+  /* Styles applied to the root element if `orientation="horizontal"`. */
+  horizontal: {},
+
+  /* Styles applied to the root element if `orientation="vertical"`. */
   vertical: {
     justifyContent: 'flex-start'
   },
+
+  /* Styles applied to the `ButtonBase` touch-ripple. */
   touchRipple: {
     color: 'rgba(0, 0, 0, 0.3)'
   }
@@ -19460,7 +20066,7 @@ function StepButton(props) {
     TouchRippleProps: {
       className: classes.touchRipple
     },
-    className: (0, _classnames.default)(classes.root, (0, _defineProperty2.default)({}, classes.vertical, orientation === 'vertical'), classNameProp)
+    className: (0, _classnames.default)(classes.root, classes[orientation], classNameProp)
   }, other), child);
 }
 
@@ -19593,29 +20199,42 @@ var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withS
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       flex: '1 1 auto'
     },
+
+    /* Styles applied to the root element if `orientation="horizontal"`. */
     horizontal: {},
+
+    /* Styles applied to the root element if `orientation="vertical"`. */
     vertical: {
       marginLeft: 12,
       // half icon
       padding: '0 0 8px'
     },
+
+    /* Styles applied to the root element if `alternativeLabel={true}`. */
     alternativeLabel: {
       position: 'absolute',
       top: 8 + 4,
       left: 'calc(50% + 20px)',
       right: 'calc(-50% + 20px)'
     },
+
+    /* Styles applied to the line element. */
     line: {
       display: 'block',
       borderColor: theme.palette.type === 'light' ? theme.palette.grey[400] : theme.palette.grey[600]
     },
+
+    /* Styles applied to the root element if `orientation="horizontal"`. */
     lineHorizontal: {
       borderTopStyle: 'solid',
       borderTopWidth: 1
     },
+
+    /* Styles applied to the root element if `orientation="vertical"`. */
     lineVertical: {
       borderLeftStyle: 'solid',
       borderLeftWidth: 1,
@@ -19742,6 +20361,7 @@ var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withS
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       marginTop: 8,
       marginLeft: 12,
@@ -19751,9 +20371,13 @@ var styles = function styles(theme) {
       paddingRight: 8,
       borderLeft: "1px solid ".concat(theme.palette.type === 'light' ? theme.palette.grey[400] : theme.palette.grey[600])
     },
+
+    /* Styles applied to the root element if `last={true}` (controlled by `Step`). */
     last: {
       borderLeft: 'none'
     },
+
+    /* Styles applied to the Transition component. */
     transition: {}
   };
 };
@@ -19936,6 +20560,7 @@ var _SvgIcon = _interopRequireDefault(__webpack_require__(/*! ../SvgIcon */ "./n
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       display: 'block',
       color: theme.palette.text.disabled,
@@ -19949,13 +20574,21 @@ var styles = function styles(theme) {
         color: theme.palette.error.main
       }
     },
+
+    /* Styles applied to the SVG text element. */
     text: {
       fill: theme.palette.primary.contrastText,
       fontSize: theme.typography.caption.fontSize,
       fontFamily: theme.typography.fontFamily
     },
+
+    /* Styles applied to the root element if `active={true}`. */
     active: {},
+
+    /* Styles applied to the root element if `completed={true}`. */
     completed: {},
+
+    /* Styles applied to the root element if `error={true}`. */
     error: {}
   };
 };
@@ -20105,6 +20738,7 @@ var _StepIcon = _interopRequireDefault(__webpack_require__(/*! ../StepIcon */ ".
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       display: 'flex',
       alignItems: 'center',
@@ -20115,13 +20749,14 @@ var styles = function styles(theme) {
         cursor: 'default'
       }
     },
+
+    /* Styles applied to the root element if `orientation="horiizontal". */
     horizontal: {},
+
+    /* Styles applied to the root element if `orientation="vertical". */
     vertical: {},
-    active: {},
-    completed: {},
-    alternativeLabel: {},
-    error: {},
-    disabled: {},
+
+    /* Styles applied to the `Typography` component which wraps `children`. */
     label: {
       color: theme.palette.text.secondary,
       '&$active': {
@@ -20140,12 +20775,31 @@ var styles = function styles(theme) {
         color: theme.palette.error.main
       }
     },
+
+    /* Styles applied to the `Typography` component if `active={true}`. */
+    active: {},
+
+    /* Styles applied to the `Typography` component if `completed={true}`. */
+    completed: {},
+
+    /* Styles applied to the root element and `Typography` component if `error={true}`. */
+    error: {},
+
+    /* Styles applied to the root element and `Typography` component if `disabled={true}`. */
+    disabled: {},
+
+    /* Styles applied to the `icon` container element. */
     iconContainer: {
       paddingRight: 8,
       '&$alternativeLabel': {
         paddingRight: 0
       }
     },
+
+    /* Styles applied to the root & icon container and `Typography` if `alternativeLabel={true}`. */
+    alternativeLabel: {},
+
+    /* Styles applied to the container element which wraps `Typography` and `optional`. */
     labelContainer: {
       width: '100%'
     }
@@ -20344,17 +20998,24 @@ var _StepConnector = _interopRequireDefault(__webpack_require__(/*! ../StepConne
 
 // @inheritedComponent Paper
 var styles = {
+  /* Styles applied to the root element. */
   root: {
     display: 'flex',
     padding: 24
   },
+
+  /* Styles applied to the root element if `orientation="horizontal"`. */
   horizontal: {
     flexDirection: 'row',
     alignItems: 'center'
   },
+
+  /* Styles applied to the root element if `orientation="vertical"`. */
   vertical: {
     flexDirection: 'column'
   },
+
+  /* Styles applied to the root element if `alternativeLabel={true}`. */
   alternativeLabel: {
     alignItems: 'flex-start'
   }
@@ -20531,6 +21192,7 @@ var _helpers = __webpack_require__(/*! ../utils/helpers */ "./node_modules/@mate
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       userSelect: 'none',
       width: '1em',
@@ -20543,21 +21205,33 @@ var styles = function styles(theme) {
         duration: theme.transitions.duration.shorter
       })
     },
+
+    /* Styles applied to the root element if `color="primary"`. */
     colorPrimary: {
       color: theme.palette.primary.main
     },
+
+    /* Styles applied to the root element if `color="secondary"`. */
     colorSecondary: {
       color: theme.palette.secondary.main
     },
+
+    /* Styles applied to the root element if `color="saction"`. */
     colorAction: {
       color: theme.palette.action.active
     },
+
+    /* Styles applied to the root element if `color="error"`. */
     colorError: {
       color: theme.palette.error.main
     },
+
+    /* Styles applied to the root element if `color="disabled"`. */
     colorDisabled: {
       color: theme.palette.action.disabled
     },
+
+    /* Styles applied to the root element if `fontSize="inherit"`. */
     fontSizeInherit: {
       fontSize: 'inherit'
     }
@@ -20579,7 +21253,7 @@ function SvgIcon(props) {
       titleAccess = props.titleAccess,
       viewBox = props.viewBox,
       other = (0, _objectWithoutProperties2.default)(props, ["children", "classes", "className", "color", "component", "fontSize", "nativeColor", "titleAccess", "viewBox"]);
-  var className = (0, _classnames.default)(classes.root, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes["fontSize".concat((0, _helpers.capitalize)(fontSize))], fontSize !== 'default'), (0, _defineProperty2.default)(_classNames, classes["color".concat((0, _helpers.capitalize)(color))], color !== 'inherit'), _classNames), classNameProp);
+  var className = (0, _classnames.default)(classes.root, (_classNames = {}, (0, _defineProperty2.default)(_classNames, classes.fontSizeInherit, fontSize === 'inherit'), (0, _defineProperty2.default)(_classNames, classes["color".concat((0, _helpers.capitalize)(color))], color !== 'inherit'), _classNames), classNameProp);
   return _react.default.createElement(Component, (0, _extends2.default)({
     className: className,
     focusable: "false",
@@ -20722,6 +21396,7 @@ var _Drawer = __webpack_require__(/*! ../Drawer/Drawer */ "./node_modules/@mater
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       position: 'fixed',
       top: 0,
@@ -21353,6 +22028,7 @@ var _SwitchBase = _interopRequireDefault(__webpack_require__(/*! ../internal/Swi
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       display: 'inline-flex',
       width: 62,
@@ -21361,6 +22037,8 @@ var styles = function styles(theme) {
       // For correct alignment with the text.
       verticalAlign: 'middle'
     },
+
+    /* Styles used to create the `icon` passed to the internal `SwitchBase` component `icon` prop. */
     icon: {
       boxShadow: theme.shadows[1],
       backgroundColor: 'currentColor',
@@ -21368,9 +22046,13 @@ var styles = function styles(theme) {
       height: 20,
       borderRadius: '50%'
     },
+
+    /* Styles applied the icon element component if `checked={true}`. */
     iconChecked: {
       boxShadow: theme.shadows[2]
     },
+
+    /* Styles applied to the internal `SwitchBase` component's `root` class. */
     switchBase: {
       zIndex: 1,
       color: theme.palette.type === 'light' ? theme.palette.grey[50] : theme.palette.grey[400],
@@ -21378,12 +22060,16 @@ var styles = function styles(theme) {
         duration: theme.transitions.duration.shortest
       })
     },
+
+    /* Styles applied to the internal `SwitchBase` component's `checked` class. */
     checked: {
       transform: 'translateX(14px)',
       '& + $bar': {
         opacity: 0.5
       }
     },
+
+    /* Styles applied to the internal SwitchBase component's root element if `color="primary"`. */
     colorPrimary: {
       '&$checked': {
         color: theme.palette.primary.main,
@@ -21392,6 +22078,8 @@ var styles = function styles(theme) {
         }
       }
     },
+
+    /* Styles applied to the internal SwitchBase component's root element if `color="secondary"`. */
     colorSecondary: {
       '&$checked': {
         color: theme.palette.secondary.main,
@@ -21400,6 +22088,8 @@ var styles = function styles(theme) {
         }
       }
     },
+
+    /* Styles applied to the internal SwitchBase component's disabled class. */
     disabled: {
       '& + $bar': {
         opacity: theme.palette.type === 'light' ? 0.12 : 0.1
@@ -21414,6 +22104,8 @@ var styles = function styles(theme) {
         }
       }
     },
+
+    /* Styles applied to the bar element. */
     bar: {
       borderRadius: 14 / 2,
       display: 'block',
@@ -21628,6 +22320,7 @@ var _unsupportedProp = _interopRequireDefault(__webpack_require__(/*! ../utils/u
 // @inheritedComponent ButtonBase
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: (0, _objectSpread3.default)({}, theme.typography.button, (0, _defineProperty2.default)({
       maxWidth: 264,
       position: 'relative',
@@ -21639,9 +22332,13 @@ var styles = function styles(theme) {
     }, theme.breakpoints.up('md'), {
       minWidth: 160
     })),
+
+    /* Styles applied to the root element if both `icon` and `label` are provided. */
     labelIcon: {
       minHeight: 72
     },
+
+    /* Styles applied to the root element if `textColor="inherit"`. */
     textColorInherit: {
       color: 'inherit',
       opacity: 0.7,
@@ -21652,6 +22349,8 @@ var styles = function styles(theme) {
         opacity: 0.4
       }
     },
+
+    /* Styles applied to the root element if `textColor="primary"`. */
     textColorPrimary: {
       color: theme.palette.text.secondary,
       '&$selected': {
@@ -21661,6 +22360,8 @@ var styles = function styles(theme) {
         color: theme.palette.text.disabled
       }
     },
+
+    /* Styles applied to the root element if `textColor="secondary"`. */
     textColorSecondary: {
       color: theme.palette.text.secondary,
       '&$selected': {
@@ -21670,12 +22371,21 @@ var styles = function styles(theme) {
         color: theme.palette.text.disabled
       }
     },
+
+    /* Styles applied to the root element if `selected={true}` (controlled by the Tabs component). */
     selected: {},
+
+    /* Styles applied to the root element if `disabled={true}` (controlled by the Tabs component). */
     disabled: {},
+
+    /* Styles applied to the root element if `fullWidth={true}` (controlled by the Tabs component). */
     fullWidth: {
       flexShrink: 1,
-      flexGrow: 1
+      flexGrow: 1,
+      maxWidth: 'auto'
     },
+
+    /* Styles applied to the `icon` and `label`'s wrapper element. */
     wrapper: {
       display: 'inline-flex',
       alignItems: 'center',
@@ -21683,6 +22393,8 @@ var styles = function styles(theme) {
       width: '100%',
       flexDirection: 'column'
     },
+
+    /* Styles applied to the label container element if `label` is provided. */
     labelContainer: (0, _defineProperty2.default)({
       paddingTop: 6,
       paddingBottom: 6,
@@ -21692,12 +22404,16 @@ var styles = function styles(theme) {
       paddingLeft: 24,
       paddingRight: 24
     }),
+
+    /* Styles applied to the label wrapper element if `label` is provided. */
     label: (0, _defineProperty2.default)({
       fontSize: theme.typography.pxToRem(14),
       whiteSpace: 'normal'
     }, theme.breakpoints.up('md'), {
       fontSize: theme.typography.pxToRem(13)
     }),
+
+    /* Styles applied to the label wrapper element if `label` is provided and the text is wrapped. */
     labelWrapped: (0, _defineProperty2.default)({}, theme.breakpoints.down('sm'), {
       fontSize: theme.typography.pxToRem(12)
     })
@@ -21738,8 +22454,8 @@ function (_React$Component) {
         onClick(event);
       }
     }, _this.checkTextWrap = function () {
-      if (_this.label) {
-        var labelWrapped = _this.label.getClientRects().length > 1;
+      if (_this.labelRef) {
+        var labelWrapped = _this.labelRef.getClientRects().length > 1;
 
         if (_this.state.labelWrapped !== labelWrapped) {
           _this.setState({
@@ -21793,8 +22509,8 @@ function (_React$Component) {
           className: classes.labelContainer
         }, _react.default.createElement("span", {
           className: (0, _classnames.default)(classes.label, (0, _defineProperty2.default)({}, classes.labelWrapped, this.state.labelWrapped)),
-          ref: function ref(node) {
-            _this2.label = node;
+          ref: function ref(_ref2) {
+            _this2.labelRef = _ref2;
           }
         }, labelProp));
       }
@@ -21964,6 +22680,7 @@ var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withS
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       display: 'table',
       fontFamily: theme.typography.fontFamily,
@@ -22112,6 +22829,7 @@ var _classnames = _interopRequireDefault(__webpack_require__(/*! classnames */ "
 var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/styles/withStyles.js"));
 
 var styles = {
+  /* Styles applied to the root element. */
   root: {
     display: 'table-row-group'
   }
@@ -22255,6 +22973,7 @@ var _colorManipulator = __webpack_require__(/*! ../styles/colorManipulator */ ".
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       display: 'table-cell',
       verticalAlign: 'inherit',
@@ -22267,35 +22986,49 @@ var styles = function styles(theme) {
         paddingRight: 24
       }
     },
+
+    /* Styles applied to the root element if `variant="head"` or `context.table.head`. */
     head: {
       color: theme.palette.text.secondary,
       fontSize: theme.typography.pxToRem(12),
       fontWeight: theme.typography.fontWeightMedium
     },
+
+    /* Styles applied to the root element if `variant="body"` or `context.table.body`. */
     body: {
       color: theme.palette.text.primary,
       fontSize: theme.typography.pxToRem(13),
       fontWeight: theme.typography.fontWeightRegular
     },
+
+    /* Styles applied to the root element if `variant="footer"` or `context.table.footer`. */
     footer: {
       borderBottom: 0,
       color: theme.palette.text.secondary,
       fontSize: theme.typography.pxToRem(12)
     },
+
+    /* Styles applied to the root element if `numeric={true}`. */
     numeric: {
       textAlign: 'right',
       flexDirection: 'row-reverse' // can be dynamically inherited at runtime by contents
 
     },
+
+    /* Styles applied to the root element if `padding="dense"`. */
     paddingDense: {
       paddingRight: 24
     },
+
+    /* Styles applied to the root element if `padding="checkbox"`. */
     paddingCheckbox: {
       padding: '0 12px',
       '&:last-child': {
         paddingRight: 12
       }
     },
+
+    /* Styles applied to the root element if `padding="none"`. */
     paddingNone: {
       padding: 0,
       '&:last-child': {
@@ -22478,6 +23211,7 @@ var _classnames = _interopRequireDefault(__webpack_require__(/*! classnames */ "
 var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/styles/withStyles.js"));
 
 var styles = {
+  /* Styles applied to the root element. */
   root: {
     display: 'table-footer-group'
   }
@@ -22622,6 +23356,7 @@ var _classnames = _interopRequireDefault(__webpack_require__(/*! classnames */ "
 var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/styles/withStyles.js"));
 
 var styles = {
+  /* Styles applied to the root element. */
   root: {
     display: 'table-header-group'
   }
@@ -22780,6 +23515,7 @@ var _TablePaginationActions = _interopRequireDefault(__webpack_require__(/*! ../
 // @inheritedComponent TableCell
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       fontSize: theme.typography.pxToRem(12),
       // Increase the specificity to override TableCell.
@@ -22787,34 +23523,52 @@ var styles = function styles(theme) {
         padding: 0
       }
     },
+
+    /* Styles applied to the Toolbar component. */
     toolbar: {
       height: 56,
       minHeight: 56,
       paddingRight: 2
     },
+
+    /* Styles applied to the spacer element. */
     spacer: {
       flex: '1 1 100%'
     },
-    menuItem: {},
+
+    /* Styles applied to the caption Typography components if `variant="caption"`. */
     caption: {
       flexShrink: 0
     },
-    input: {
-      fontSize: 'inherit',
-      flexShrink: 0
-    },
+
+    /* Styles applied to the Select component `root` class. */
     selectRoot: {
       marginRight: 32,
       marginLeft: 8,
       color: theme.palette.text.secondary
     },
+
+    /* Styles applied to the Select component `select` class. */
     select: {
       paddingLeft: 8,
       paddingRight: 16
     },
+
+    /* Styles applied to the Select component `icon` class. */
     selectIcon: {
       top: 1
     },
+
+    /* Styles applied to the Input component. */
+    input: {
+      fontSize: 'inherit',
+      flexShrink: 0
+    },
+
+    /* Styles applied to the MenuItem component. */
+    menuItem: {},
+
+    /* Styles applied to the internal `TablePaginationActions` component. */
     actions: {
       flexShrink: 0,
       color: theme.palette.text.secondary,
@@ -23268,6 +24022,7 @@ var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withS
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       color: 'inherit',
       display: 'table-row',
@@ -23284,11 +24039,19 @@ var styles = function styles(theme) {
         : 'rgba(255, 255, 255, 0.14)'
       }
     },
+
+    /* Styles applied to the root element if `context.table` & `selected={true}`. */
     selected: {},
+
+    /* Styles applied to the root element if `context.table` & `hover={true}`. */
     hover: {},
+
+    /* Styles applied to the root element if `context.table.head`. */
     head: {
       height: 56
     },
+
+    /* Styles applied to the root element if `context.table.footer`. */
     footer: {
       height: 56
     }
@@ -23434,6 +24197,7 @@ var _helpers = __webpack_require__(/*! ../utils/helpers */ "./node_modules/@mate
 // @inheritedComponent ButtonBase
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       cursor: 'pointer',
       display: 'inline-flex',
@@ -23447,12 +24211,16 @@ var styles = function styles(theme) {
         color: theme.palette.text.primary
       }
     },
+
+    /* Styles applied to the root element if `active={true}`. */
     active: {
       color: theme.palette.text.primary,
       '& $icon': {
         opacity: 1
       }
     },
+
+    /* Styles applied to the icon component. */
     icon: {
       height: 16,
       marginRight: 4,
@@ -23464,9 +24232,13 @@ var styles = function styles(theme) {
       userSelect: 'none',
       width: 16
     },
+
+    /* Styles applied to the icon component if `direction="desc"`. */
     iconDirectionDesc: {
       transform: 'rotate(0deg)'
     },
+
+    /* Styles applied to the icon component if `direction="asc"`. */
     iconDirectionAsc: {
       transform: 'rotate(180deg)'
     }
@@ -23596,10 +24368,10 @@ var _debounce = _interopRequireDefault(__webpack_require__(/*! debounce */ "./no
 
 // < 1kb payload overhead when lodash/debounce is > 3kb.
 var styles = {
-  width: '100px',
-  height: '100px',
+  width: 100,
+  height: 100,
   position: 'absolute',
-  top: '-10000px',
+  top: -10000,
   overflow: 'scroll',
   msOverflowStyle: 'scrollbar'
 };
@@ -23639,12 +24411,14 @@ function (_React$Component) {
         });
       }
     }, 166), _this.setMeasurements = function () {
-      if (!_this.node) {
+      var nodeRef = _this.nodeRef;
+
+      if (!nodeRef) {
         return;
       }
 
-      _this.scrollbarHeight = _this.node.offsetHeight - _this.node.clientHeight;
-      _this.scrollbarWidth = _this.node.offsetWidth - _this.node.clientWidth;
+      _this.scrollbarHeight = nodeRef.offsetHeight - nodeRef.clientHeight;
+      _this.scrollbarWidth = nodeRef.offsetWidth - nodeRef.clientWidth;
     }, _temp));
   }
 
@@ -23674,8 +24448,8 @@ function (_React$Component) {
         onResize: this.handleResize
       }) : null, _react.default.createElement("div", {
         style: styles,
-        ref: function ref(node) {
-          _this2.node = node;
+        ref: function ref(_ref2) {
+          _this2.nodeRef = _ref2;
         }
       }));
     }
@@ -23725,6 +24499,7 @@ var _helpers = __webpack_require__(/*! ../utils/helpers */ "./node_modules/@mate
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       position: 'absolute',
       height: 2,
@@ -23733,9 +24508,13 @@ var styles = function styles(theme) {
       transition: theme.transitions.create(),
       willChange: 'left, width'
     },
+
+    /* Styles applied to the root element if `color="primary"`. */
     colorPrimary: {
       backgroundColor: theme.palette.primary.main
     },
+
+    /* Styles applied to the root element if `color="secondary"`. */
     colorSecondary: {
       backgroundColor: theme.palette.secondary.main
     }
@@ -23819,6 +24598,7 @@ var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withS
 var _ButtonBase = _interopRequireDefault(__webpack_require__(/*! ../ButtonBase */ "./node_modules/@material-ui/core/ButtonBase/index.js"));
 
 var styles = {
+  /* Styles applied to the root element. */
   root: {
     color: 'inherit',
     flex: '0 0 56px'
@@ -23954,37 +24734,56 @@ var _TabScrollButton = _interopRequireDefault(__webpack_require__(/*! ./TabScrol
 
 /* eslint-disable no-restricted-globals */
 // < 1kb payload overhead when lodash/debounce is > 3kb.
+// TODO: should we fork it?
+// https://github.com/michaelrhodes/scroll/issues/10
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       overflow: 'hidden',
       minHeight: 48,
       WebkitOverflowScrolling: 'touch' // Add iOS momentum scrolling.
 
     },
+
+    /* Styles applied to the flex container element. */
     flexContainer: {
       display: 'flex'
     },
+
+    /* Styles applied to the flex container element if `centered={true}` & `scrollable={false}`. */
+    centered: {
+      justifyContent: 'center'
+    },
+
+    /* Styles applied to the tablist element. */
     scroller: {
       position: 'relative',
       display: 'inline-block',
       flex: '1 1 auto',
       whiteSpace: 'nowrap'
     },
+
+    /* Styles applied to the tablist element if `scrollable={false}`. */
     fixed: {
       overflowX: 'hidden',
       width: '100%'
     },
+
+    /* Styles applied to the tablist element if `scrollable={true}`. */
     scrollable: {
       overflowX: 'scroll'
     },
-    centered: {
-      justifyContent: 'center'
-    },
+
+    /* Styles applied to the `ScrollButtonComponent` component. */
     scrollButtons: {},
+
+    /* Styles applied to the `ScrollButtonComponent` component if `sscrollButtons="auto"`. */
     scrollButtonsAuto: (0, _defineProperty2.default)({}, theme.breakpoints.down('xs'), {
       display: 'none'
     }),
+
+    /* Styles applied to the `TabIndicator` component. */
     indicator: {}
   };
 };
@@ -24050,15 +24849,15 @@ function (_React$Component) {
     }, _this.getTabsMeta = function (value, direction) {
       var tabsMeta;
 
-      if (_this.tabs) {
-        var rect = _this.tabs.getBoundingClientRect(); // create a new object with ClientRect class props + scrollLeft
+      if (_this.tabsRef) {
+        var rect = _this.tabsRef.getBoundingClientRect(); // create a new object with ClientRect class props + scrollLeft
 
 
         tabsMeta = {
-          clientWidth: _this.tabs ? _this.tabs.clientWidth : 0,
-          scrollLeft: _this.tabs ? _this.tabs.scrollLeft : 0,
-          scrollLeftNormalized: _this.tabs ? (0, _normalizeScrollLeft.getNormalizedScrollLeft)(_this.tabs, direction) : 0,
-          scrollWidth: _this.tabs ? _this.tabs.scrollWidth : 0,
+          clientWidth: _this.tabsRef.clientWidth,
+          scrollLeft: _this.tabsRef.scrollLeft,
+          scrollLeftNormalized: (0, _normalizeScrollLeft.getNormalizedScrollLeft)(_this.tabsRef, direction),
+          scrollWidth: _this.tabsRef.scrollWidth,
           left: rect.left,
           right: rect.right
         };
@@ -24066,8 +24865,8 @@ function (_React$Component) {
 
       var tabMeta;
 
-      if (_this.tabs && value !== false) {
-        var children = _this.tabs.children[0].children;
+      if (_this.tabsRef && value !== false) {
+        var children = _this.tabsRef.children[0].children;
 
         if (children.length > 0) {
           var tab = children[_this.valueToIndex.get(value)];
@@ -24082,13 +24881,9 @@ function (_React$Component) {
         tabMeta: tabMeta
       };
     }, _this.handleLeftScrollClick = function () {
-      if (_this.tabs) {
-        _this.moveTabsScroll(-_this.tabs.clientWidth);
-      }
+      _this.moveTabsScroll(-_this.tabsRef.clientWidth);
     }, _this.handleRightScrollClick = function () {
-      if (_this.tabs) {
-        _this.moveTabsScroll(_this.tabs.clientWidth);
-      }
+      _this.moveTabsScroll(_this.tabsRef.clientWidth);
     }, _this.handleScrollbarSizeChange = function (_ref2) {
       var scrollbarHeight = _ref2.scrollbarHeight;
 
@@ -24099,15 +24894,12 @@ function (_React$Component) {
       });
     }, _this.moveTabsScroll = function (delta) {
       var theme = _this.props.theme;
+      var multiplier = theme.direction === 'rtl' ? -1 : 1;
+      var nextScrollLeft = _this.tabsRef.scrollLeft + delta * multiplier; // Fix for Edge
 
-      if (_this.tabs) {
-        var multiplier = theme.direction === 'rtl' ? -1 : 1;
-        var nextScrollLeft = _this.tabs.scrollLeft + delta * multiplier; // Fix for Edge
+      var invert = theme.direction === 'rtl' && (0, _normalizeScrollLeft.detectScrollType)() === 'reverse' ? -1 : 1;
 
-        var invert = theme.direction === 'rtl' && (0, _normalizeScrollLeft.detectScrollType)() === 'reverse' ? -1 : 1;
-
-        _scroll.default.left(_this.tabs, invert * nextScrollLeft);
-      }
+      _scroll.default.left(_this.tabsRef, invert * nextScrollLeft);
     }, _this.scrollSelectedIntoView = function () {
       var _this$props2 = _this.props,
           theme = _this$props2.theme,
@@ -24125,12 +24917,12 @@ function (_React$Component) {
         // left side of button is out of view
         var nextScrollLeft = tabsMeta.scrollLeft + (tabMeta.left - tabsMeta.left);
 
-        _scroll.default.left(_this.tabs, nextScrollLeft);
+        _scroll.default.left(_this.tabsRef, nextScrollLeft);
       } else if (tabMeta.right > tabsMeta.right) {
         // right side of button is out of view
         var _nextScrollLeft = tabsMeta.scrollLeft + (tabMeta.right - tabsMeta.right);
 
-        _scroll.default.left(_this.tabs, _nextScrollLeft);
+        _scroll.default.left(_this.tabsRef, _nextScrollLeft);
       }
     }, _this.updateScrollButtonState = function () {
       var _this$props3 = _this.props,
@@ -24138,11 +24930,11 @@ function (_React$Component) {
           scrollButtons = _this$props3.scrollButtons,
           theme = _this$props3.theme;
 
-      if (_this.tabs && scrollable && scrollButtons !== 'off') {
-        var _this$tabs = _this.tabs,
-            scrollWidth = _this$tabs.scrollWidth,
-            clientWidth = _this$tabs.clientWidth;
-        var scrollLeft = (0, _normalizeScrollLeft.getNormalizedScrollLeft)(_this.tabs, theme.direction);
+      if (scrollable && scrollButtons !== 'off') {
+        var _this$tabsRef = _this.tabsRef,
+            scrollWidth = _this$tabsRef.scrollWidth,
+            clientWidth = _this$tabsRef.clientWidth;
+        var scrollLeft = (0, _normalizeScrollLeft.getNormalizedScrollLeft)(_this.tabsRef, theme.direction);
         var showLeftScroll = theme.direction === 'rtl' ? scrollWidth > clientWidth + scrollLeft : scrollLeft > 0;
         var showRightScroll = theme.direction === 'rtl' ? scrollLeft > 0 : scrollWidth > clientWidth + scrollLeft;
 
@@ -24175,10 +24967,10 @@ function (_React$Component) {
   }, {
     key: "componentDidUpdate",
     value: function componentDidUpdate(prevProps, prevState) {
-      this.updateScrollButtonState(); // The index might have changed at the same time.
+      // The index might have changed at the same time.
       // We need to check again the right indicator position.
-
       this.updateIndicatorState(this.props);
+      this.updateScrollButtonState();
 
       if (this.state.indicatorStyle !== prevState.indicatorStyle) {
         this.scrollSelectedIntoView();
@@ -24222,7 +25014,7 @@ function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
-      var _classNames3,
+      var _classNames4,
           _this2 = this;
 
       var _props = this.props,
@@ -24246,8 +25038,8 @@ function (_React$Component) {
           other = (0, _objectWithoutProperties2.default)(_props, ["action", "centered", "children", "classes", "className", "component", "fullWidth", "indicatorColor", "onChange", "scrollable", "ScrollButtonComponent", "scrollButtons", "TabIndicatorProps", "textColor", "theme", "value"]);
        true ? (0, _warning.default)(!centered || !scrollable, 'Material-UI: you can not use the `centered={true}` and `scrollable={true}` properties ' + 'at the same time on a `Tabs` component.') : undefined;
       var className = (0, _classnames.default)(classes.root, classNameProp);
-      var scrollerClassName = (0, _classnames.default)(classes.scroller, (_classNames3 = {}, (0, _defineProperty2.default)(_classNames3, classes.fixed, !scrollable), (0, _defineProperty2.default)(_classNames3, classes.scrollable, scrollable), _classNames3));
       var flexContainerClassName = (0, _classnames.default)(classes.flexContainer, (0, _defineProperty2.default)({}, classes.centered, centered && !scrollable));
+      var scrollerClassName = (0, _classnames.default)(classes.scroller, (_classNames4 = {}, (0, _defineProperty2.default)(_classNames4, classes.fixed, !scrollable), (0, _defineProperty2.default)(_classNames4, classes.scrollable, scrollable), _classNames4));
 
       var indicator = _react.default.createElement(_TabIndicator.default, (0, _extends2.default)({
         className: classes.indicator,
@@ -24292,8 +25084,8 @@ function (_React$Component) {
       }, conditionalElements.scrollButtonLeft, _react.default.createElement("div", {
         className: scrollerClassName,
         style: this.state.scrollerStyle,
-        ref: function ref(node) {
-          _this2.tabs = node;
+        ref: function ref(_ref3) {
+          _this2.tabsRef = _ref3;
         },
         role: "tablist",
         onScroll: this.handleTabsScroll
@@ -24711,7 +25503,7 @@ TextField.propTypes =  true ? {
   placeholder: _propTypes.default.string,
 
   /**
-   * If `true`, the label is displayed as required.
+   * If `true`, the label is displayed as required and the input will be required.
    */
   required: _propTypes.default.bool,
 
@@ -24814,13 +25606,20 @@ var _withStyles = _interopRequireDefault(__webpack_require__(/*! ../styles/withS
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       position: 'relative',
       display: 'flex',
       alignItems: 'center'
     },
+
+    /* Styles applied to the root element if `disableGutters={false}`. */
     gutters: theme.mixins.gutters(),
+
+    /* Styles applied to the root element if `variant="regular"`. */
     regular: theme.mixins.toolbar,
+
+    /* Styles applied to the root element if `variant="dense"`. */
     dense: {
       minHeight: 48
     }
@@ -24959,10 +25758,13 @@ var _Popper = _interopRequireDefault(__webpack_require__(/*! ../Popper */ "./nod
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the Popper component. */
     popper: {
       zIndex: theme.zIndex.tooltip,
       opacity: 0.9
     },
+
+    /* Styles applied to the tooltip (label wrapper) element. */
     tooltip: {
       backgroundColor: theme.palette.grey[700],
       borderRadius: theme.shape.borderRadius,
@@ -24972,29 +25774,39 @@ var styles = function styles(theme) {
       fontSize: theme.typography.pxToRem(10),
       lineHeight: "".concat(theme.typography.round(14 / 10), "em")
     },
+
+    /* Styles applied to the tooltip (label wrapper) element if the tooltip is opened by touch. */
     touch: {
       padding: '8px 16px',
       fontSize: theme.typography.pxToRem(14),
       lineHeight: "".concat(theme.typography.round(16 / 14), "em")
     },
+
+    /* Styles applied to the tooltip (label wrapper) element if `placement` contains "left". */
     tooltipPlacementLeft: (0, _defineProperty2.default)({
       transformOrigin: 'right center',
       margin: '0 24px '
     }, theme.breakpoints.up('sm'), {
       margin: '0 14px'
     }),
+
+    /* Styles applied to the tooltip (label wrapper) element if `placement` contains "right". */
     tooltipPlacementRight: (0, _defineProperty2.default)({
       transformOrigin: 'left center',
       margin: '0 24px'
     }, theme.breakpoints.up('sm'), {
       margin: '0 14px'
     }),
+
+    /* Styles applied to the tooltip (label wrapper) element if `placement` contains "top". */
     tooltipPlacementTop: (0, _defineProperty2.default)({
       transformOrigin: 'center bottom',
       margin: '24px 0'
     }, theme.breakpoints.up('sm'), {
       margin: '14px 0'
     }),
+
+    /* Styles applied to the tooltip (label wrapper) element if `placement` contains "bottom". */
     tooltipPlacementBottom: (0, _defineProperty2.default)({
       transformOrigin: 'center top',
       margin: '24px 0'
@@ -25024,6 +25836,10 @@ function (_React$Component) {
     _this.isControlled = null;
     _this.ignoreNonTouchEvents = false;
     _this.defaultId = null;
+    _this.internalState = {
+      hover: false,
+      focus: false
+    };
 
     _this.handleEnter = function (event) {
       var _this$props = _this.props,
@@ -25031,17 +25847,30 @@ function (_React$Component) {
           enterDelay = _this$props.enterDelay;
       var childrenProps = children.props;
 
-      if (event.type === 'focus' && childrenProps.onFocus) {
-        childrenProps.onFocus(event);
+      if (event.type === 'focus') {
+        _this.internalState.focus = true;
+
+        if (childrenProps.onFocus) {
+          childrenProps.onFocus(event);
+        }
       }
 
-      if (event.type === 'mouseenter' && childrenProps.onMouseEnter) {
-        childrenProps.onMouseEnter(event);
+      if (event.type === 'mouseenter') {
+        _this.internalState.hover = true;
+
+        if (childrenProps.onMouseEnter) {
+          childrenProps.onMouseEnter(event);
+        }
       }
 
       if (_this.ignoreNonTouchEvents && event.type !== 'touchstart') {
         return;
-      }
+      } // Remove the title ahead of time.
+      // We don't want to wait for the next render commit.
+      // We would risk displaying two tooltips at the same time (native + this one).
+
+
+      _this.childrenRef.setAttribute('title', '');
 
       clearTimeout(_this.enterTimer);
       clearTimeout(_this.leaveTimer);
@@ -25074,12 +25903,20 @@ function (_React$Component) {
           leaveDelay = _this$props2.leaveDelay;
       var childrenProps = children.props;
 
-      if (event.type === 'blur' && childrenProps.onBlur) {
-        childrenProps.onBlur(event);
+      if (event.type === 'blur') {
+        _this.internalState.focus = false;
+
+        if (childrenProps.onBlur) {
+          childrenProps.onBlur(event);
+        }
       }
 
-      if (event.type === 'mouseleave' && childrenProps.onMouseLeave) {
-        childrenProps.onMouseLeave(event);
+      if (event.type === 'mouseleave') {
+        _this.internalState.hover = false;
+
+        if (childrenProps.onMouseLeave) {
+          childrenProps.onMouseLeave(event);
+        }
       }
 
       clearTimeout(_this.enterTimer);
@@ -25096,6 +25933,10 @@ function (_React$Component) {
     };
 
     _this.handleClose = function (event) {
+      if (_this.internalState.focus || _this.internalState.hover) {
+        return;
+      }
+
       if (!_this.isControlled) {
         _this.setState({
           open: false
@@ -25164,7 +26005,7 @@ function (_React$Component) {
   (0, _createClass2.default)(Tooltip, [{
     key: "componentDidMount",
     value: function componentDidMount() {
-       true ? (0, _warning.default)(!this.childrenRef || !this.childrenRef.disabled || !this.childrenRef.tagName.toLowerCase() === 'button', ['Material-UI: you are providing a disabled `button` child to the Tooltip component.', 'A disabled element does not fire events.', "Tooltip needs to listen to the child element's events to display the title.", '', 'Place a `div` container on top of the element.'].join('\n')) : undefined; // Fallback to this default id when possible.
+       true ? (0, _warning.default)(!this.childrenRef.disabled || !this.childrenRef.tagName.toLowerCase() === 'button', ['Material-UI: you are providing a disabled `button` child to the Tooltip component.', 'A disabled element does not fire events.', "Tooltip needs to listen to the child element's events to display the title.", '', 'Place a `div` container on top of the element.'].join('\n')) : undefined; // Fallback to this default id when possible.
       // Use the random value for client side rendering only.
       // We can't use it server side.
 
@@ -25227,10 +26068,10 @@ function (_React$Component) {
         childrenProps.onBlur = this.handleLeave;
       }
 
-       true ? (0, _warning.default)(!children.props.title, ['Material-UI: you have been providing a `title` property to the child of <Tooltip />.', "Remove this title property `".concat(children.props.title, "` or the Tooltip component.")].join('\n')) : undefined;
+       true ? (0, _warning.default)(!children.props.title, ['Material-UI: you have provided a `title` property to the child of <Tooltip />.', "Remove this title property `".concat(children.props.title, "` or the Tooltip component.")].join('\n')) : undefined;
       return _react.default.createElement(_react.default.Fragment, null, _react.default.createElement(_RootRef.default, {
-        rootRef: function rootRef(node) {
-          _this2.childrenRef = node;
+        rootRef: function rootRef(ref) {
+          _this2.childrenRef = ref;
         }
       }, _react.default.cloneElement(children, childrenProps)), _react.default.createElement(_Popper.default, (0, _extends2.default)({
         className: classes.popper,
@@ -25441,56 +26282,103 @@ var _helpers = __webpack_require__(/*! ../utils/helpers */ "./node_modules/@mate
 
 var styles = function styles(theme) {
   return {
+    /* Styles applied to the root element. */
     root: {
       display: 'block',
       margin: 0
     },
+
+    /* Styles applied to the root element if `variant="display4"`. */
     display4: theme.typography.display4,
+
+    /* Styles applied to the root element if `variant="display3"`. */
     display3: theme.typography.display3,
+
+    /* Styles applied to the root element if `variant="display2"`. */
     display2: theme.typography.display2,
+
+    /* Styles applied to the root element if `variant="display1"`. */
     display1: theme.typography.display1,
+
+    /* Styles applied to the root element if `variant="headline"`. */
     headline: theme.typography.headline,
+
+    /* Styles applied to the root element if `variant="title"`. */
     title: theme.typography.title,
+
+    /* Styles applied to the root element if `variant="subheading"`. */
     subheading: theme.typography.subheading,
+
+    /* Styles applied to the root element if `variant="body2"`. */
     body2: theme.typography.body2,
+
+    /* Styles applied to the root element if `variant="body1"`. */
     body1: theme.typography.body1,
+
+    /* Styles applied to the root element if `variant="caption"`. */
     caption: theme.typography.caption,
+
+    /* Styles applied to the root element if `variant="button"`. */
     button: theme.typography.button,
+
+    /* Styles applied to the root element if `align="left"`. */
     alignLeft: {
       textAlign: 'left'
     },
+
+    /* Styles applied to the root element if `align="center"`. */
     alignCenter: {
       textAlign: 'center'
     },
+
+    /* Styles applied to the root element if `align="right"`. */
     alignRight: {
       textAlign: 'right'
     },
+
+    /* Styles applied to the root element if `align="justify"`. */
     alignJustify: {
       textAlign: 'justify'
     },
+
+    /* Styles applied to the root element if `align="nowrap"`. */
     noWrap: {
       overflow: 'hidden',
       textOverflow: 'ellipsis',
       whiteSpace: 'nowrap'
     },
+
+    /* Styles applied to the root element if `gutterBottom={true}`. */
     gutterBottom: {
       marginBottom: '0.35em'
     },
+
+    /* Styles applied to the root element if `paragraph={true}`. */
     paragraph: {
       marginBottom: 16
     },
+
+    /* Styles applied to the root element if `color="inherit"`. */
     colorInherit: {
       color: 'inherit'
     },
+
+    /* Styles applied to the root element if `color="primary"`. */
     colorPrimary: {
       color: theme.palette.primary.main
     },
+
+    /* Styles applied to the root element if `color="secondary"`. */
     colorSecondary: {
       color: theme.palette.secondary.main
     },
+
+    /* Styles applied to the root element if `color="textSecondary"`. */
     colorTextSecondary: {
       color: theme.palette.text.secondary
     },
+
+    /* Styles applied to the root element if `color="error"`. */
     colorError: {
       color: theme.palette.error.main
     }
@@ -27036,7 +27924,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Zoom__WEBPACK_IMPORTED_MODULE_100__ = __webpack_require__(/*! ./Zoom */ "./node_modules/@material-ui/core/Zoom/index.js");
 /* harmony import */ var _Zoom__WEBPACK_IMPORTED_MODULE_100___default = /*#__PURE__*/__webpack_require__.n(_Zoom__WEBPACK_IMPORTED_MODULE_100__);
 /* harmony reexport (default from non-harmony) */ __webpack_require__.d(__webpack_exports__, "Zoom", function() { return _Zoom__WEBPACK_IMPORTED_MODULE_100___default.a; });
-/** @license Material-UI v1.4.0
+/** @license Material-UI v1.4.1
  *
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
@@ -27213,6 +28101,10 @@ var styles = {
     padding: 0
   }
 };
+/**
+ * @ignore - internal component.
+ */
+
 exports.styles = styles;
 
 var SwitchBase =
@@ -27283,6 +28175,7 @@ function (_React$Component) {
       var _classNames;
 
       var _props = this.props,
+          autoFocus = _props.autoFocus,
           checkedProp = _props.checked,
           checkedIcon = _props.checkedIcon,
           classes = _props.classes,
@@ -27296,10 +28189,12 @@ function (_React$Component) {
           onBlur = _props.onBlur,
           onChange = _props.onChange,
           onFocus = _props.onFocus,
+          readOnly = _props.readOnly,
+          required = _props.required,
           tabIndex = _props.tabIndex,
           type = _props.type,
           value = _props.value,
-          other = (0, _objectWithoutProperties2.default)(_props, ["checked", "checkedIcon", "classes", "className", "disabled", "icon", "id", "inputProps", "inputRef", "name", "onBlur", "onChange", "onFocus", "tabIndex", "type", "value"]);
+          other = (0, _objectWithoutProperties2.default)(_props, ["autoFocus", "checked", "checkedIcon", "classes", "className", "disabled", "icon", "id", "inputProps", "inputRef", "name", "onBlur", "onChange", "onFocus", "readOnly", "required", "tabIndex", "type", "value"]);
       var muiFormControl = this.context.muiFormControl;
       var disabled = disabledProp;
 
@@ -27320,16 +28215,19 @@ function (_React$Component) {
         onFocus: this.handleFocus,
         onBlur: this.handleBlur
       }, other), checked ? checkedIcon : icon, _react.default.createElement("input", (0, _extends2.default)({
-        id: hasLabelFor && id,
-        type: type,
-        name: name,
+        autoFocus: autoFocus,
         checked: checked,
-        onChange: this.handleInputChange,
         className: classes.input,
         disabled: disabled,
+        id: hasLabelFor && id,
+        name: name,
+        onChange: this.handleInputChange,
+        readOnly: readOnly,
+        ref: inputRef,
+        required: required,
         tabIndex: tabIndex,
-        value: value,
-        ref: inputRef
+        type: type,
+        value: value
       }, inputProps)));
     }
   }]);
@@ -27339,6 +28237,11 @@ function (_React$Component) {
 
 
 SwitchBase.propTypes =  true ? {
+  /**
+   * If `true`, the input will be focused during the first mount.
+   */
+  autoFocus: _propTypes.default.bool,
+
   /**
    * If `true`, the component is checked.
    */
@@ -27428,6 +28331,17 @@ SwitchBase.propTypes =  true ? {
    * @ignore
    */
   onFocus: _propTypes.default.func,
+
+  /**
+   * It prevents the user from changing the value of the field
+   * (not from interacting with the field).
+   */
+  readOnly: _propTypes.default.bool,
+
+  /**
+   * If `true`, the input will be required.
+   */
+  required: _propTypes.default.bool,
 
   /**
    * @ignore
@@ -28560,7 +29474,7 @@ var escapeRegex = /([[\].#*$><+~=|^:(),"'`\s])/g;
 
 function safePrefix(classNamePrefix) {
   var prefix = String(classNamePrefix);
-   true ? (0, _warning.default)(prefix.length < 100, "Material-UI: the class name prefix is too long: ".concat(prefix, ".")) : undefined; // Sanitize the string as will be used to prefix the generated class name.
+   true ? (0, _warning.default)(prefix.length < 256, "Material-UI: the class name prefix is too long: ".concat(prefix, ".")) : undefined; // Sanitize the string as will be used to prefix the generated class name.
 
   return prefix.replace(escapeRegex, '-');
 } // Returns a function which generates unique class names based on counters.
@@ -30041,6 +30955,8 @@ exports.default = void 0;
 
 var _extends2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/builtin/extends */ "./node_modules/@babel/runtime/helpers/builtin/extends.js"));
 
+var _objectWithoutProperties2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/builtin/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/builtin/objectWithoutProperties.js"));
+
 var _classCallCheck2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/builtin/classCallCheck */ "./node_modules/@babel/runtime/helpers/builtin/classCallCheck.js"));
 
 var _createClass2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/builtin/createClass */ "./node_modules/@babel/runtime/helpers/builtin/createClass.js"));
@@ -30050,6 +30966,8 @@ var _possibleConstructorReturn2 = _interopRequireDefault(__webpack_require__(/*!
 var _inherits2 = _interopRequireDefault(__webpack_require__(/*! @babel/runtime/helpers/builtin/inherits */ "./node_modules/@babel/runtime/helpers/builtin/inherits.js"));
 
 var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_modules/react/index.js"));
+
+var _propTypes = _interopRequireDefault(__webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js"));
 
 var _hoistNonReactStatics = _interopRequireDefault(__webpack_require__(/*! hoist-non-react-statics */ "./node_modules/hoist-non-react-statics/dist/hoist-non-react-statics.cjs.js"));
 
@@ -30113,14 +31031,24 @@ var withTheme = function withTheme() {
       }, {
         key: "render",
         value: function render() {
+          var _props = this.props,
+              innerRef = _props.innerRef,
+              other = (0, _objectWithoutProperties2.default)(_props, ["innerRef"]);
           return _react.default.createElement(Component, (0, _extends2.default)({
-            theme: this.state.theme
-          }, this.props));
+            theme: this.state.theme,
+            ref: innerRef
+          }, other));
         }
       }]);
       return WithTheme;
     }(_react.default.Component);
 
+    WithTheme.propTypes =  true ? {
+      /**
+       * Use that property to pass a ref callback to the decorated component.
+       */
+      innerRef: _propTypes.default.oneOfType([_propTypes.default.func, _propTypes.default.object])
+    } : undefined;
     WithTheme.contextTypes = _themeListener.default.contextTypes;
 
     if (true) {
@@ -30822,7 +31750,8 @@ var withWidth = function withWidth() {
               initialWidth = _props.initialWidth,
               theme = _props.theme,
               width = _props.width,
-              other = (0, _objectWithoutProperties2.default)(_props, ["initialWidth", "theme", "width"]);
+              innerRef = _props.innerRef,
+              other = (0, _objectWithoutProperties2.default)(_props, ["initialWidth", "theme", "width", "innerRef"]);
           var props = (0, _objectSpread2.default)({
             width: width || this.state.width || initialWidth || initialWidthOption || (0, _getThemeProps.default)({
               theme: theme,
@@ -30848,7 +31777,9 @@ var withWidth = function withWidth() {
           return _react.default.createElement(_reactEventListener.default, {
             target: "window",
             onResize: this.handleResize
-          }, _react.default.createElement(Component, (0, _extends2.default)({}, more, props)));
+          }, _react.default.createElement(Component, (0, _extends2.default)({}, more, props, {
+            ref: innerRef
+          })));
         }
       }]);
       return WithWidth;
@@ -30865,6 +31796,11 @@ var withWidth = function withWidth() {
        * http://caniuse.com/#search=client%20hint
        */
       initialWidth: _propTypes.default.oneOf(['xs', 'sm', 'md', 'lg', 'xl']),
+
+      /**
+       * Use that property to pass a ref callback to the decorated component.
+       */
+      innerRef: _propTypes.default.oneOfType([_propTypes.default.func, _propTypes.default.object]),
 
       /**
        * @ignore
@@ -30912,7 +31848,10 @@ var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_mod
 
 var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
 
-var _default = (0, _createSvgIcon.default)(_react.default.createElement("g", null, _react.default.createElement("path", {
+var _default = (0, _createSvgIcon.default)(_react.default.createElement(_react.default.Fragment, null, _react.default.createElement("path", {
+  fill: "none",
+  d: "M0 0h24v24H0z"
+}), _react.default.createElement("path", {
   d: "M18 8h-1V6c0-2.76-2.24-5-5-5S7 3.24 7 6v2H6c-1.1 0-2 .9-2 2v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V10c0-1.1-.9-2-2-2zm-6 9c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zm3.1-9H8.9V6c0-1.71 1.39-3.1 3.1-3.1 1.71 0 3.1 1.39 3.1 3.1v2z"
 })), 'Lock');
 
@@ -30941,7 +31880,10 @@ var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_mod
 
 var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
 
-var _default = (0, _createSvgIcon.default)(_react.default.createElement("g", null, _react.default.createElement("path", {
+var _default = (0, _createSvgIcon.default)(_react.default.createElement(_react.default.Fragment, null, _react.default.createElement("path", {
+  fill: "none",
+  d: "M0 0h24v24H0z"
+}), _react.default.createElement("path", {
   d: "M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5 5 2.24 5 5-2.24 5-5 5zm0-8c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"
 })), 'Visibility');
 
@@ -30970,7 +31912,10 @@ var _react = _interopRequireDefault(__webpack_require__(/*! react */ "./node_mod
 
 var _createSvgIcon = _interopRequireDefault(__webpack_require__(/*! ./utils/createSvgIcon */ "./node_modules/@material-ui/icons/utils/createSvgIcon.js"));
 
-var _default = (0, _createSvgIcon.default)(_react.default.createElement("g", null, _react.default.createElement("path", {
+var _default = (0, _createSvgIcon.default)(_react.default.createElement(_react.default.Fragment, null, _react.default.createElement("path", {
+  fill: "none",
+  d: "M0 0h24v24H0zm0 0h24v24H0zm0 0h24v24H0zm0 0h24v24H0z"
+}), _react.default.createElement("path", {
   d: "M12 7c2.76 0 5 2.24 5 5 0 .65-.13 1.26-.36 1.83l2.92 2.92c1.51-1.26 2.7-2.89 3.43-4.75-1.73-4.39-6-7.5-11-7.5-1.4 0-2.74.25-3.98.7l2.16 2.16C10.74 7.13 11.35 7 12 7zM2 4.27l2.28 2.28.46.46C3.08 8.3 1.78 10.02 1 12c1.73 4.39 6 7.5 11 7.5 1.55 0 3.03-.3 4.38-.84l.42.42L19.73 22 21 20.73 3.27 3 2 4.27zM7.53 9.8l1.55 1.55c-.05.21-.08.43-.08.65 0 1.66 1.34 3 3 3 .22 0 .44-.03.65-.08l1.55 1.55c-.67.33-1.41.53-2.2.53-2.76 0-5-2.24-5-5 0-.79.2-1.53.53-2.2zm4.31-.78l3.15 3.15.02-.16c0-1.66-1.34-3-3-3l-.17.01z"
 })), 'VisibilityOff');
 
@@ -34106,6 +35051,25 @@ module.exports.parse = parse
 
 /***/ }),
 
+/***/ "./node_modules/encoding/lib sync recursive":
+/*!****************************************!*\
+  !*** ./node_modules/encoding/lib sync ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function webpackEmptyContext(req) {
+	var e = new Error("Cannot find module '" + req + "'");
+	e.code = 'MODULE_NOT_FOUND';
+	throw e;
+}
+webpackEmptyContext.keys = function() { return []; };
+webpackEmptyContext.resolve = webpackEmptyContext;
+module.exports = webpackEmptyContext;
+webpackEmptyContext.id = "./node_modules/encoding/lib sync recursive";
+
+/***/ }),
+
 /***/ "./node_modules/encoding/lib/encoding.js":
 /*!***********************************************!*\
   !*** ./node_modules/encoding/lib/encoding.js ***!
@@ -34119,7 +35083,7 @@ module.exports.parse = parse
 var iconvLite = __webpack_require__(/*! iconv-lite */ "./node_modules/iconv-lite/lib/index.js");
 // Load Iconv from an external file to be able to disable Iconv for webpack
 // Add /\/iconv-loader$/ to webpack.IgnorePlugin to ignore it
-var Iconv = __webpack_require__(/*! ./iconv-loader */ "./node_modules/node-noop/index.js");
+var Iconv = __webpack_require__(/*! ./iconv-loader */ "./node_modules/encoding/lib/iconv-loader.js");
 
 // Expose to the world
 module.exports.convert = convert;
@@ -34227,6 +35191,32 @@ function checkEncoding(name) {
     replace(/^us[\-_]?ascii$/i, 'ASCII').
     toUpperCase();
 }
+
+
+/***/ }),
+
+/***/ "./node_modules/encoding/lib/iconv-loader.js":
+/*!***************************************************!*\
+  !*** ./node_modules/encoding/lib/iconv-loader.js ***!
+  \***************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+var iconv_package;
+var Iconv;
+
+try {
+    // this is to fool browserify so it doesn't try (in vain) to install iconv.
+    iconv_package = 'iconv';
+    Iconv = __webpack_require__("./node_modules/encoding/lib sync recursive")(iconv_package).Iconv;
+} catch (E) {
+    // node-iconv not present
+}
+
+module.exports = Iconv;
 
 
 /***/ }),
@@ -56931,10 +57921,10 @@ function toString(value) {
 
 /***/ }),
 
-/***/ "./node_modules/node-fetch/lib/index.es.js":
-/*!*************************************************!*\
-  !*** ./node_modules/node-fetch/lib/index.es.js ***!
-  \*************************************************/
+/***/ "./node_modules/node-fetch/lib/index.mjs":
+/*!***********************************************!*\
+  !*** ./node_modules/node-fetch/lib/index.mjs ***!
+  \***********************************************/
 /*! exports provided: default, Headers, Request, Response, FetchError */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -56944,6 +57934,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Request", function() { return Request; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "Response", function() { return Response; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "FetchError", function() { return FetchError; });
+/* harmony import */ var stream__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! stream */ "stream");
+/* harmony import */ var stream__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(stream__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! http */ "http");
+/* harmony import */ var http__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(http__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var url__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! url */ "url");
+/* harmony import */ var url__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(url__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var https__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! https */ "https");
+/* harmony import */ var https__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(https__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var zlib__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! zlib */ "zlib");
+/* harmony import */ var zlib__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(zlib__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+
 // Based on https://github.com/tmpvar/jsdom/blob/aa85b2abf07766ff7bf5c1f6daafb3726f2f2db5/lib/jsdom/living/blob.js
 // (MIT licensed)
 
@@ -57069,19 +58075,6 @@ FetchError.prototype = Object.create(Error.prototype);
 FetchError.prototype.constructor = FetchError;
 FetchError.prototype.name = 'FetchError';
 
-/**
- * body.js
- *
- * Body interface provides common methods for Request and Response
- */
-
-const Stream = __webpack_require__(/*! stream */ "stream");
-
-var _require = __webpack_require__(/*! stream */ "stream");
-
-const PassThrough = _require.PassThrough;
-
-
 let convert;
 try {
 	convert = __webpack_require__(/*! encoding */ "./node_modules/encoding/lib/encoding.js").convert;
@@ -57111,19 +58104,7 @@ function Body(body) {
 	if (body == null) {
 		// body is undefined or null
 		body = null;
-	} else if (typeof body === 'string') {
-		// body is string
-	} else if (isURLSearchParams(body)) {
-		// body is a URLSearchParams
-	} else if (body instanceof Blob) {
-		// body is blob
-	} else if (Buffer.isBuffer(body)) {
-		// body is buffer
-	} else if (Object.prototype.toString.call(body) === '[object ArrayBuffer]') {
-		// body is array buffer
-	} else if (body instanceof Stream) {
-		// body is stream
-	} else {
+	} else if (typeof body === 'string') ; else if (isURLSearchParams(body)) ; else if (body instanceof Blob) ; else if (Buffer.isBuffer(body)) ; else if (Object.prototype.toString.call(body) === '[object ArrayBuffer]') ; else if (ArrayBuffer.isView(body)) ; else if (body instanceof stream__WEBPACK_IMPORTED_MODULE_0___default.a) ; else {
 		// none of the above
 		// coerce to string
 		body = String(body);
@@ -57136,7 +58117,7 @@ function Body(body) {
 	this.size = size;
 	this.timeout = timeout;
 
-	if (body instanceof Stream) {
+	if (body instanceof stream__WEBPACK_IMPORTED_MODULE_0___default.a) {
 		body.on('error', function (err) {
 			_this[INTERNALS].error = new FetchError(`Invalid response body while trying to fetch ${_this.url}: ${err.message}`, 'system', err);
 		});
@@ -57294,13 +58275,18 @@ function consumeBody() {
 		return Body.Promise.resolve(this.body);
 	}
 
-	// body is buffer
+	// body is ArrayBuffer
 	if (Object.prototype.toString.call(this.body) === '[object ArrayBuffer]') {
 		return Body.Promise.resolve(Buffer.from(this.body));
 	}
 
+	// body is ArrayBufferView
+	if (ArrayBuffer.isView(this.body)) {
+		return Body.Promise.resolve(Buffer.from(this.body.buffer, this.body.byteOffset, this.body.byteLength));
+	}
+
 	// istanbul ignore if: should never happen
-	if (!(this.body instanceof Stream)) {
+	if (!(this.body instanceof stream__WEBPACK_IMPORTED_MODULE_0___default.a)) {
 		return Body.Promise.resolve(Buffer.alloc(0));
 	}
 
@@ -57310,7 +58296,7 @@ function consumeBody() {
 	let accumBytes = 0;
 	let abort = false;
 
-	return new Body.Promise(function (resolve, reject) {
+	return new Body.Promise(function (resolve$$1, reject) {
 		let resTimeout;
 
 		// allow timeout on slow response body
@@ -57349,7 +58335,7 @@ function consumeBody() {
 			clearTimeout(resTimeout);
 
 			try {
-				resolve(Buffer.concat(accum));
+				resolve$$1(Buffer.concat(accum));
 			} catch (err) {
 				// handle streams that have accumulated too much data (issue #414)
 				reject(new FetchError(`Could not create Buffer from response body for ${_this4.url}: ${err.message}`, 'system', err));
@@ -57451,10 +58437,10 @@ function clone(instance) {
 
 	// check that body is a stream and not form-data object
 	// note: we can't clone the form-data object without having it as a dependency
-	if (body instanceof Stream && typeof body.getBoundary !== 'function') {
+	if (body instanceof stream__WEBPACK_IMPORTED_MODULE_0___default.a && typeof body.getBoundary !== 'function') {
 		// tee instance body
-		p1 = new PassThrough();
-		p2 = new PassThrough();
+		p1 = new stream__WEBPACK_IMPORTED_MODULE_0__["PassThrough"]();
+		p2 = new stream__WEBPACK_IMPORTED_MODULE_0__["PassThrough"]();
 		body.pipe(p1);
 		body.pipe(p2);
 		// set instance body to teed body and return the other teed body
@@ -57496,7 +58482,10 @@ function extractContentType(instance) {
 		// body is buffer
 		return null;
 	} else if (Object.prototype.toString.call(body) === '[object ArrayBuffer]') {
-		// body is array buffer
+		// body is ArrayBuffer
+		return null;
+	} else if (ArrayBuffer.isView(body)) {
+		// body is ArrayBufferView
 		return null;
 	} else if (typeof body.getBoundary === 'function') {
 		// detect form data input from form-data module
@@ -57538,7 +58527,10 @@ function getTotalBytes(instance) {
 		// body is buffer
 		return body.length;
 	} else if (Object.prototype.toString.call(body) === '[object ArrayBuffer]') {
-		// body is array buffer
+		// body is ArrayBuffer
+		return body.byteLength;
+	} else if (ArrayBuffer.isView(body)) {
+		// body is ArrayBufferView
 		return body.byteLength;
 	} else if (body && typeof body.getLengthSync === 'function') {
 		// detect form data input from form-data module
@@ -57585,8 +58577,12 @@ function writeToStream(dest, instance) {
 		dest.write(body);
 		dest.end();
 	} else if (Object.prototype.toString.call(body) === '[object ArrayBuffer]') {
-		// body is array buffer
+		// body is ArrayBuffer
 		dest.write(Buffer.from(body));
+		dest.end();
+	} else if (ArrayBuffer.isView(body)) {
+		// body is ArrayBufferView
+		dest.write(Buffer.from(body.buffer, body.byteOffset, body.byteLength));
 		dest.end();
 	} else {
 		// body is stream
@@ -57666,9 +58662,7 @@ class Headers {
 
 		// We don't worry about converting prop to ByteString here as append()
 		// will handle it.
-		if (init == null) {
-			// no op
-		} else if (typeof init === 'object') {
+		if (init == null) ; else if (typeof init === 'object') {
 			const method = init[Symbol.iterator];
 			if (method != null) {
 				if (typeof method !== 'function') {
@@ -57977,17 +58971,6 @@ function createHeadersLenient(obj) {
 	return headers;
 }
 
-/**
- * response.js
- *
- * Response class provides content decoding
- */
-
-var _require$1 = __webpack_require__(/*! http */ "http");
-
-const STATUS_CODES = _require$1.STATUS_CODES;
-
-
 const INTERNALS$1 = Symbol('Response internals');
 
 /**
@@ -58009,7 +58992,7 @@ class Response {
 		this[INTERNALS$1] = {
 			url: opts.url,
 			status,
-			statusText: opts.statusText || STATUS_CODES[status],
+			statusText: opts.statusText || http__WEBPACK_IMPORTED_MODULE_1__["STATUS_CODES"][status],
 			headers: new Headers(opts.headers)
 		};
 	}
@@ -58071,20 +59054,6 @@ Object.defineProperty(Response.prototype, Symbol.toStringTag, {
 	configurable: true
 });
 
-/**
- * request.js
- *
- * Request class contains server only options
- *
- * All spec algorithm step numbers are based on https://fetch.spec.whatwg.org/commit-snapshots/ae716822cb3a61843226cd090eefc6589446c1d2/.
- */
-
-var _require$2 = __webpack_require__(/*! url */ "url");
-
-const format_url = _require$2.format;
-const parse_url = _require$2.parse;
-
-
 const INTERNALS$2 = Symbol('Request internals');
 
 /**
@@ -58116,14 +59085,14 @@ class Request {
 				// in order to support Node.js' Url objects; though WHATWG's URL objects
 				// will fall into this branch also (since their `toString()` will return
 				// `href` property anyway)
-				parsedURL = parse_url(input.href);
+				parsedURL = Object(url__WEBPACK_IMPORTED_MODULE_2__["parse"])(input.href);
 			} else {
 				// coerce input to a string before attempting to parse
-				parsedURL = parse_url(`${input}`);
+				parsedURL = Object(url__WEBPACK_IMPORTED_MODULE_2__["parse"])(`${input}`);
 			}
 			input = {};
 		} else {
-			parsedURL = parse_url(input.url);
+			parsedURL = Object(url__WEBPACK_IMPORTED_MODULE_2__["parse"])(input.url);
 		}
 
 		let method = init.method || input.method || 'GET';
@@ -58168,7 +59137,7 @@ class Request {
 	}
 
 	get url() {
-		return format_url(this[INTERNALS$2].parsedURL);
+		return Object(url__WEBPACK_IMPORTED_MODULE_2__["format"])(this[INTERNALS$2].parsedURL);
 	}
 
 	get headers() {
@@ -58269,27 +59238,6 @@ function getNodeRequestOptions(request) {
 }
 
 /**
- * index.js
- *
- * a request API compatible with window.fetch
- *
- * All spec algorithm step numbers are based on https://fetch.spec.whatwg.org/commit-snapshots/ae716822cb3a61843226cd090eefc6589446c1d2/.
- */
-
-const http = __webpack_require__(/*! http */ "http");
-const https = __webpack_require__(/*! https */ "https");
-
-var _require$3 = __webpack_require__(/*! stream */ "stream");
-
-const PassThrough$1 = _require$3.PassThrough;
-
-var _require2 = __webpack_require__(/*! url */ "url");
-
-const resolve_url = _require2.resolve;
-
-const zlib = __webpack_require__(/*! zlib */ "zlib");
-
-/**
  * Fetch function
  *
  * @param   Mixed    url   Absolute url or Request instance
@@ -58306,12 +59254,12 @@ function fetch(url, opts) {
 	Body.Promise = fetch.Promise;
 
 	// wrap http.request into fetch
-	return new fetch.Promise(function (resolve, reject) {
+	return new fetch.Promise(function (resolve$$1, reject) {
 		// build request object
 		const request = new Request(url, opts);
 		const options = getNodeRequestOptions(request);
 
-		const send = (options.protocol === 'https:' ? https : http).request;
+		const send = (options.protocol === 'https:' ? https__WEBPACK_IMPORTED_MODULE_3___default.a : http__WEBPACK_IMPORTED_MODULE_1___default.a).request;
 
 		// send request
 		const req = send(options);
@@ -58347,7 +59295,7 @@ function fetch(url, opts) {
 				const location = headers.get('Location');
 
 				// HTTP fetch step 5.3
-				const locationURL = location === null ? null : resolve_url(request.url, location);
+				const locationURL = location === null ? null : Object(url__WEBPACK_IMPORTED_MODULE_2__["resolve"])(request.url, location);
 
 				// HTTP fetch step 5.5
 				switch (request.redirect) {
@@ -58401,14 +59349,14 @@ function fetch(url, opts) {
 						}
 
 						// HTTP-redirect fetch step 15
-						resolve(fetch(new Request(locationURL, requestOpts)));
+						resolve$$1(fetch(new Request(locationURL, requestOpts)));
 						finalize();
 						return;
 				}
 			}
 
 			// prepare response
-			let body = res.pipe(new PassThrough$1());
+			let body = res.pipe(new stream__WEBPACK_IMPORTED_MODULE_0__["PassThrough"]());
 			const response_options = {
 				url: request.url,
 				status: res.statusCode,
@@ -58430,7 +59378,7 @@ function fetch(url, opts) {
 			// 4. no content response (204)
 			// 5. content not modified response (304)
 			if (!request.compress || request.method === 'HEAD' || codings === null || res.statusCode === 204 || res.statusCode === 304) {
-				resolve(new Response(body, response_options));
+				resolve$$1(new Response(body, response_options));
 				return;
 			}
 
@@ -58440,14 +59388,14 @@ function fetch(url, opts) {
 			// by common browsers.
 			// Always using Z_SYNC_FLUSH is what cURL does.
 			const zlibOptions = {
-				flush: zlib.Z_SYNC_FLUSH,
-				finishFlush: zlib.Z_SYNC_FLUSH
+				flush: zlib__WEBPACK_IMPORTED_MODULE_4___default.a.Z_SYNC_FLUSH,
+				finishFlush: zlib__WEBPACK_IMPORTED_MODULE_4___default.a.Z_SYNC_FLUSH
 			};
 
 			// for gzip
 			if (codings == 'gzip' || codings == 'x-gzip') {
-				body = body.pipe(zlib.createGunzip(zlibOptions));
-				resolve(new Response(body, response_options));
+				body = body.pipe(zlib__WEBPACK_IMPORTED_MODULE_4___default.a.createGunzip(zlibOptions));
+				resolve$$1(new Response(body, response_options));
 				return;
 			}
 
@@ -58455,27 +59403,26 @@ function fetch(url, opts) {
 			if (codings == 'deflate' || codings == 'x-deflate') {
 				// handle the infamous raw deflate response from old servers
 				// a hack for old IIS and Apache servers
-				const raw = res.pipe(new PassThrough$1());
+				const raw = res.pipe(new stream__WEBPACK_IMPORTED_MODULE_0__["PassThrough"]());
 				raw.once('data', function (chunk) {
 					// see http://stackoverflow.com/questions/37519828
 					if ((chunk[0] & 0x0F) === 0x08) {
-						body = body.pipe(zlib.createInflate());
+						body = body.pipe(zlib__WEBPACK_IMPORTED_MODULE_4___default.a.createInflate());
 					} else {
-						body = body.pipe(zlib.createInflateRaw());
+						body = body.pipe(zlib__WEBPACK_IMPORTED_MODULE_4___default.a.createInflateRaw());
 					}
-					resolve(new Response(body, response_options));
+					resolve$$1(new Response(body, response_options));
 				});
 				return;
 			}
 
 			// otherwise, use response as-is
-			resolve(new Response(body, response_options));
+			resolve$$1(new Response(body, response_options));
 		});
 
 		writeToStream(req, request);
 	});
 }
-
 /**
  * Redirect code matching
  *
@@ -58486,28 +59433,11 @@ fetch.isRedirect = function (code) {
 	return code === 301 || code === 302 || code === 303 || code === 307 || code === 308;
 };
 
-// Needed for TypeScript.
-fetch.default = fetch;
-
 // expose Promise
 fetch.Promise = global.Promise;
 
 /* harmony default export */ __webpack_exports__["default"] = (fetch);
 
-
-
-/***/ }),
-
-/***/ "./node_modules/node-noop/index.js":
-/*!*****************************************!*\
-  !*** ./node_modules/node-noop/index.js ***!
-  \*****************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-(function(exports) {
-  exports.noop = function(){};
-})(typeof module === 'object' && typeof module.exports === 'object' ? module.exports : window);
 
 
 /***/ }),
@@ -102154,7 +103084,7 @@ var __generator = (this && this.__generator) || function (thisArg, body) {
 var _this = this;
 Object.defineProperty(exports, "__esModule", { value: true });
 var error_1 = __webpack_require__(/*! ./error */ "./src/shared/utils/error.ts");
-var node_fetch_1 = __webpack_require__(/*! node-fetch */ "./node_modules/node-fetch/lib/index.es.js");
+var node_fetch_1 = __webpack_require__(/*! node-fetch */ "./node_modules/node-fetch/lib/index.mjs");
 var fetchIt = (typeof window !== 'undefined' && window.fetch) ? window.fetch : node_fetch_1.default;
 var sharedHeaders = {
     Accept: 'application/json',
