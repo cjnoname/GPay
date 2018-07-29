@@ -30,6 +30,11 @@ module.exports = (env, argv) => {
       rules: [
         {
           test: /\.tsx?$/, include: /src/, use: 'awesome-typescript-loader?silent=true'
+        },
+        {
+          type: 'javascript/auto',
+          test: /\.mjs$/,
+          use: []
         }
       ]
     },
